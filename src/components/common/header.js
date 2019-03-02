@@ -10,7 +10,7 @@ const Header = ({ siteTitle, menus }) => (
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto" justify-content-end>
+      <Nav className="mr-auto">
       <NavDropdown title="Blog" id="blog-links">
           <NavDropdown.Item href="#action/3.1">Game On</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Our Game: Field Rivals</NavDropdown.Item>
