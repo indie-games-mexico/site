@@ -10,9 +10,9 @@ const SelectLanguage = ({ langs, intl }) => {
   console.log('INTL', intl);
   const linkTitle = intl.formatMessage({id: 'language'});
   const links = langs
-                .map(lang => Object.assign({}, lang, { link: `/${lang.langKey}/` }))
+                .map(lang => Object.assign({}, lang, { link: `/${lang.langKey.locale}/` }))
                 .map(lang =>
-    <NavDropdown.Item key={lang.langKey} href={lang.link}>{lang.langKey}</NavDropdown.Item>
+    <NavDropdown.Item key={lang.langKey.locale } href={lang.link}>{lang.langKey.name}</NavDropdown.Item>
   );
 
   return (

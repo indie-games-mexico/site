@@ -1,7 +1,7 @@
 module.exports = {
   'title': 'Indie Games Mexico',
   'blog': 'Blog',
-  'language': 'Language',
+  'language': 'Choose Language',
   'localeName': 'English US',
   'locale': 'en',
   'site.search': 'Search',

@@ -1,7 +1,13 @@
 module.exports = {
   langs: [
-    'en', 
-    'es'
+    {
+      locale: 'en',
+      name: 'English'
+    },
+    {
+      locale: 'es',
+      name: 'Spanish'
+    }
   ],
   defaultLangKey: 'en'
 };

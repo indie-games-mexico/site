@@ -17,7 +17,10 @@ const Layout = ({ children, location, i18nMessages }) => {
             siteMetadata {
               languages {
                 defaultLangKey
-                langs
+                langs {
+                  locale
+                  name
+                }
               }
             }
           }
