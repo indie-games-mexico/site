@@ -1,3 +1,6 @@
+// This Seo component is not multi locale friendly
+// needs to be refactored
+
 /**
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook

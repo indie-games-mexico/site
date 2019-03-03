@@ -24,6 +24,7 @@ const Layout = ({ children, location, i18nMessages }) => {
         }
       `}
       render={data => {
+        console.log('i18nMessages', i18nMessages);
         const url = location.pathname;
         const { langs, defaultLangKey } = data.site.siteMetadata.languages;
         const langKey = getCurrentLangKey(langs, defaultLangKey, url);
@@ -35,22 +36,15 @@ const Layout = ({ children, location, i18nMessages }) => {
             messages={i18nMessages}
           >
             <div>
-              <Helmet
-                title="Indie Games Localized"
-                meta={[
-                  { name: 'description', content: 'Sample' },
-                  { name: 'keywords', content: 'sample, something' },
-                ]}
-              />
-              <Header langs={langsMenu} />
-              <div
-                style={{
-                  margin: '0 auto',
-                  maxWidth: 960,
-                  padding: '0px 1.0875rem 1.45rem',
-                  paddingTop: 0,
-                }}
-              >
+            <Helmet
+              title={i18nMessages.title}
+              meta={[
+                { name: 'description', content: i18nMessages['seo.description'] },
+                { name: 'keywords', content: i18nMessages['seo.keywords'] },
+              ]}
+            />
+              <Header langs={langsMenu} i18nMessages={i18nMessages}  />
+              <div>
                 {children}
               </div>
             </div>
