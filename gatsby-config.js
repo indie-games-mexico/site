@@ -1,42 +1,11 @@
+const languages = require('./src/data/languages');
+
 module.exports = {
   siteMetadata: {
     title: `Indie Games Mexico`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: '@gatsbyjs',
-    menus: [
-      {
-        title: "Blog",
-        id: 'blog-links',
-        links: [
-          {
-            href: '#',
-            name: 'Game On'
-          },
-          {
-            href: '#',
-            name: 'Our Game: Field Rivals'
-          },
-          {
-            href: '#',
-            name: 'Characters and Attributes'
-          }
-        ]
-      },
-      {
-        title: 'Language',
-        id: 'locale-links',
-        links: [
-          {
-            href: '#',
-            name: 'English United States'
-          },
-          {
-            href: '#',
-            name: 'Spanish Mexico'
-          },
-        ]
-      }
-    ]
+    author: '@indiegamesmexico',
+    languages
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -59,8 +28,17 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+      }
     },
+    {
+      resolve: 'gatsby-plugin-i18n', // will be use later for blog type pages
+      options: {
+        langKeyForNull: 'any',
+        langKeyDefault: languages.defaultLangKey,
+        useLangKeyLayout: true,
+        prefixDefault: true,
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',

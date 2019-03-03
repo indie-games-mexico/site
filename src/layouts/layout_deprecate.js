@@ -12,20 +12,16 @@ import { StaticQuery, graphql } from "gatsby"
 import Header from "../common/header"
 import 'bootstrap/dist/css/bootstrap.css';
 
-const Layout = ({ type, children }) => (
+const Layout = ({ type, children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
             title
-            menus {
-              id
-              title
-              links {
-                href
-                name
-              }
+            languages {
+              langs
+              defaultLangKey
             }
           }
         }
@@ -33,7 +29,7 @@ const Layout = ({ type, children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} menus={ data.site.siteMetadata.menus }  />
+        <Header {...data.site.siteMetadata }  />
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()},
@@ -48,6 +44,7 @@ const Layout = ({ type, children }) => (
 Layout.propTypes = {
   type: PropTypes.string,
   children: PropTypes.node.isRequired,
+  location: PropTypes.node.isRequired
 }
 
 export default Layout
