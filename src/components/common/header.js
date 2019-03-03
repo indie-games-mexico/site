@@ -6,8 +6,6 @@ import { Navbar, Form, FormControl, Button, Nav } from 'react-bootstrap';
 
 // impmement dynamic menus
 const Header = ({langs, i18nMessages}) => {
-
-
   return (
   <header>
     <Navbar bg="dark" variant="dark" expand="lg">

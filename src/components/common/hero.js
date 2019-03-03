@@ -1,3 +1,4 @@
+// this has to use the image component provided gatsby because it optimies for the screen
 import React from 'react';
 import { Parallax } from 'react-parallax';
 
