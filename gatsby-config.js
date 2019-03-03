@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-i18n', // will be use later for blog type pages
       options: {
-        langKeyForNull: 'any',
+        langKeyForNull: 'en',
         langKeyDefault: languages.defaultLangKey,
         useLangKeyLayout: true,
         prefixDefault: true,
