@@ -7,9 +7,10 @@ import { injectIntl } from 'react-intl';
 import { NavDropdown } from 'react-bootstrap';
 
 const SelectLanguage = ({ langs, intl }) => {
+  console.log('INTL', intl);
   const linkTitle = intl.formatMessage({id: 'language'});
   const links = langs
-                .map(lang => Object.assign({}, lang, { link: `/${lang.langKey}/` })) //ugly temporary fix
+                .map(lang => Object.assign({}, lang, { link: `/${lang.langKey}/` }))
                 .map(lang =>
     <NavDropdown.Item key={lang.langKey} href={lang.link}>{lang.langKey}</NavDropdown.Item>
   );
