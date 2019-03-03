@@ -7,12 +7,12 @@ import { injectIntl } from 'react-intl';
 import { NavDropdown } from 'react-bootstrap';
 
 const SelectLanguage = ({ langs, intl }) => {
-  console.log('INTL', intl);
   const linkTitle = intl.formatMessage({id: 'language'});
+  const currentLocale = intl.formatMessage({id: 'locale'});
   const links = langs
-                .map(lang => Object.assign({}, lang, { link: `/${lang.langKey.locale}/` }))
+                .map(lang => Object.assign({}, lang, { link: `/${lang.langKey.locale}/`, active: currentLocale === lang.langKey.locale }))
                 .map(lang =>
-    <NavDropdown.Item key={lang.langKey.locale } href={lang.link}>{lang.langKey.name}</NavDropdown.Item>
+    <NavDropdown.Item key={lang.langKey.locale } active={lang.active} href={lang.link}>{lang.langKey.name}</NavDropdown.Item>
   );
 
   return (
