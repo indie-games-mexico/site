@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -12,6 +13,13 @@ import Img from "gatsby-image"
  * - `gatsby-image`: https://gatsby.dev/gatsby-image
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
+
+/*
+  StaticQuery does not support dynamic queries because its compiled as plain string
+  without evaluating variables
+  So this approach its only good for logos but not for dynamic content 
+*/
+
 
 const Image = () => (
   <StaticQuery
