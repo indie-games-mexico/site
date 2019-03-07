@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+
+// multi locale example
+// https://github.com/hugomn/hugomagalhaes.com/tree/master/src/data
