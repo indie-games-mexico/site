@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import React from "react"
-import SelectLanguage from './SelectLanguage';
 import styled from 'styled-components';
 import { LigthSocialMediaLinks } from './social-media-links';
+import  LanguageChooser  from './language-chooser';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -35,8 +35,12 @@ const SocialLinkWrapper = styled.div`
   display: inline-block;
 `;
 
+const LanguageChooserWrapper = styled.div`
+  display: inline-block;
+`;
 
-const Header = ({ i18nMessages, socialMediaLinks }) => (
+
+const Header = ({ langs, i18nMessages, socialMediaLinks }) => (
   <StyledHeader>
     <BrandWrapper>
       <BrandTitle>{i18nMessages.title}</BrandTitle>
@@ -44,6 +48,9 @@ const Header = ({ i18nMessages, socialMediaLinks }) => (
     <SocialLinkWrapper>
       <LigthSocialMediaLinks socialMediaLinks={socialMediaLinks}></LigthSocialMediaLinks>
     </SocialLinkWrapper>
+    <LanguageChooserWrapper>
+      <LanguageChooser langs={langs} intl={i18nMessages}></LanguageChooser>
+    </LanguageChooserWrapper>
   </StyledHeader>
 );
 
