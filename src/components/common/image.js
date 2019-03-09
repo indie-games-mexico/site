@@ -17,7 +17,7 @@ import Img from "gatsby-image"
 /*
   StaticQuery does not support dynamic queries because its compiled as plain string
   without evaluating variables
-  So this approach its only good for logos but not for dynamic content 
+  So this approach its only good for logos but not for dynamic content
 */
 
 

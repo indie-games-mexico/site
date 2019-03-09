@@ -51,15 +51,15 @@ const LinkDescription = styled.span`
 
 const MediaLink = ({icon, link, description}) => (
   <Li>
-    <LightA href={link}><i className={icon}></i>
+    <LightA href={link} target="_blank"><i className={icon}></i>
       <LinkDescription>{description}</LinkDescription>
     </LightA>
   </Li>
 )
 
-export const LigthSocialMediaLinks = ({ socialLinks }) => (
+export const LigthSocialMediaLinks = ({ socialMediaLinks }) => (
   <Ul>
-    {socialLinks.map((link, index) => <MediaLink key={index} {...link}></MediaLink>)}
+    {socialMediaLinks.map((link, index) => <MediaLink key={index} {...link}></MediaLink>)}
   </Ul>
 )
 

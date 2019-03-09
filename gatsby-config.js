@@ -1,11 +1,13 @@
 const languages = require('./src/data/languages');
+const socialMediaLinks = require('./src/data/social-media-links');
 
 module.exports = {
   siteMetadata: {
     title: `Indie Games Mexico`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: '@indiegamesmexico',
-    languages
+    languages,
+    socialMediaLinks,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

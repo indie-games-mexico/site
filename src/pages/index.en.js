@@ -1,18 +1,15 @@
 // - https://github.com/hugomn/hugomagalhaes.com
 
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+// import { StaticQuery, graphql } from "gatsby"
 import Layout from "../layouts/en";
 import Hero from '../components/common/hero';
-import { HighLightParagraph } from '../components/common/highlight-paragraph';
-import { TwoColumnSummary } from '../components/common/two-column-summary';
-import { JustiedParagraph } from '../components/common/justified-paragraph';
+
 
 
 const IndexPage = (props) => (
   <Layout location={ props.location }>
-      
+      <Hero/>
   </Layout>
 );
 

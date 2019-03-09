@@ -24,6 +24,11 @@ const Layout = ({ children, location, i18nMessages }) => {
                   name
                 }
               }
+              socialMediaLinks {
+                icon
+                link
+                description
+              }
             }
           }
         }
@@ -48,7 +53,7 @@ const Layout = ({ children, location, i18nMessages }) => {
                 { name: 'keywords', content: i18nMessages['seo.keywords'] },
               ]}
             />
-              <Header langs={langsMenu} i18nMessages={i18nMessages}  />
+              <Header langs={langsMenu} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks}  />
               <div>
                 {children}
               </div>
