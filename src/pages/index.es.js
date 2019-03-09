@@ -53,9 +53,9 @@ const IndexPage = (props) => (
           <JustiedParagraph>
 
             Cada personaje tiene su propio estilo de juego, que varía el juego de cartas y la estrategia es diferente. Por ejemplo: el equipo de Winter Wolves es más ofensivo, así que es más probable que obtenga muchas cartas de "lanzamiento", pero tienen algunas cartas defensivas.
-            <p>
+            <br/>
               Además, cada equipo tiene sus propios uniformes, colores, escenario, tema musical y algunas personalidades diferentes.
-            </p>
+            
             </JustiedParagraph>
         }
     >
