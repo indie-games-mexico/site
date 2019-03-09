@@ -38,6 +38,17 @@ module.exports = {
         useLangKeyLayout: true,
         prefixDefault: true,
       }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `ZCOOL QingKe HuangYou`,
+            //subsets: [`cursive`],
+          },
+        ],
+      },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

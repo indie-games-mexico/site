@@ -1,19 +1,78 @@
 import PropTypes from "prop-types"
 import React from "react"
 import SelectLanguage from './SelectLanguage';
+import styled from 'styled-components';
+import { LigthSocialMediaLinks } from './social-media-links';
 // import { Navbar, Form, FormControl, Button, Nav } from 'react-bootstrap';
 
 // left here create your own components just use bootstrap grid
 // look into styled componentes
 
 // impmement dynamic menus
-const Header = ({langs, i18nMessages}) => {
+const StyledHeader = styled.header`
+  background-color: rgba(0, 0, 0, .8);;
+  height: 60px;
+  display:flex;
+  justify-content:space-between;
+  padding: 0 10px;
+  box-shadow: 10px 10px 10px -6px rgba(240,248,255,1);
+`;
+
+const BrandWrapper = styled.div`
+  display:inline-block;
+  text-align:center;
+`;
+
+const BrandTitle = styled.h1`
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    color: #f0f8ff;
+    font-weight: 100;
+    font-style: inherit;
+    font-variant: small-caps;
+    font-size: 2.25em;
+    line-height: 1.5em;
+`;
+
+const SocialLinkWrapper = styled.div`
+  display: inline-block;
+`;
+
+const styledBrand = styled.div
+
+const Header = () => (
+  <StyledHeader>
+    <BrandWrapper>
+      <BrandTitle>Indie Games Mexico</BrandTitle>
+    </BrandWrapper>
+    <SocialLinkWrapper>
+      <LigthSocialMediaLinks socialLinks={[
+        {
+          icon: 'fab fa-facebook',
+          link: '#',
+          description:'Follow us on Facebook'
+        },
+        {
+          icon: 'fab fa-twitter',
+          link: '#',
+          description:'Follow us on Twitter'
+        },
+        {
+          icon: 'fab fa-instagram',
+          link: '#',
+          description:'Follow us on Instagram'
+        }
+    ]}></LigthSocialMediaLinks>
+    </SocialLinkWrapper>
+  </StyledHeader>
+);
+
+/*({langs, i18nMessages}) => {
   return (
   <header>
 
   </header>
   )
-}
+}*/
 
 Header.propTypes = {
   title: PropTypes.string,

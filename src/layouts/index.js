@@ -6,7 +6,9 @@ import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from 'react-intl';
 import 'intl';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const Layout = ({ children, location, i18nMessages }) => {
   return (

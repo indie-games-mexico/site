@@ -9,6 +9,14 @@ import { HighLightParagraph } from '../components/common/highlight-paragraph';
 import { TwoColumnSummary } from '../components/common/two-column-summary';
 import { JustiedParagraph } from '../components/common/justified-paragraph';
 
+
+const IndexPage = (props) => (
+  <Layout location={ props.location }>
+      
+  </Layout>
+);
+
+/*
 const IndexPage = (props) => (
   <Layout location={ props.location }>
     <Hero/>
@@ -59,5 +67,5 @@ const IndexPage = (props) => (
     </TwoColumnSummary>
   </Layout>
 )
-
+*/
 export default IndexPage
