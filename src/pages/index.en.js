@@ -1,15 +1,37 @@
 // - https://github.com/hugomn/hugomagalhaes.com
 
-import React from "react"
-// import { StaticQuery, graphql } from "gatsby"
+import React from "react";
+import styled from 'styled-components';
 import Layout from "../layouts/en";
 import Hero from '../components/common/hero';
+import { Panel } from '../components/common/panel';
+import { Container } from '../components/common/container';
+import { H2, P1 } from '../components/common/elements';
+import { HighLightParagraph } from '../components/common/highlight-paragraph'
 
-
+const MainPanel = styled.div`
+  transform: translateY(-100px);
+`;
+const CommunityParagraph = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+`;
 
 const IndexPage = (props) => (
   <Layout location={ props.location }>
       <Hero/>
+      <Container>
+        <MainPanel>
+          <Panel>
+            <H2>Game Developer Community</H2>
+            <CommunityParagraph>
+            <P1>
+              We are a fast growing community of people and companies with diverse backgrounds interested in video game development. We welcome people of all skills such as but not limited to programming, music, drawing, writing, voice acting and more.
+            </P1>
+            </CommunityParagraph>
+          </Panel>
+        </MainPanel>
+      </Container>
   </Layout>
 );
 

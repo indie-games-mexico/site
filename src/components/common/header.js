@@ -5,6 +5,7 @@ import { LigthSocialMediaLinks } from './social-media-links';
 import  LanguageChooser  from './language-chooser';
 
 const StyledHeader = styled.header`
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
   position: fixed;
   top: 0;
   width: 100%;
@@ -12,17 +13,16 @@ const StyledHeader = styled.header`
   background-color: rgba(0, 0, 0, .8);;
   height: 60px;
   display:flex;
-  justify-content:space-between;
   padding: 0 10px;
 `;
 
 const BrandWrapper = styled.div`
   display:inline-block;
-  text-align:center;
+  flex-grow: 1;
 `;
 
 const BrandTitle = styled.h1`
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-family: inherit;
     color: #f0f8ff;
     font-weight: 100;
     font-style: inherit;

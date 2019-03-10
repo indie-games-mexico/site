@@ -47,8 +47,10 @@ module.exports = {
         fonts: [
           {
             family: `ZCOOL QingKe HuangYou`,
-            //subsets: [`cursive`],
           },
+          {
+            family: 'Rajdhani'
+          }
         ],
       },
     }

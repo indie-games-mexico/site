@@ -1,12 +1,11 @@
 // https://github.com/angeloocana/gatsby-plugin-i18n/blob/master/packages/gatsby-starter-default-i18n/src/components/SelectLanguage.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import  styled  from 'styled-components';
 
 const LanguageMenuWrapper = styled.ul`
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
     position:relative;
     padding:0;
     margin:0;
@@ -23,6 +22,7 @@ const Li = styled.li`
 `;
 
 const LanguageButton = styled.a`
+    user-select: none;
     color: white;
     text-decoration: none;
     padding: 10px 15px;
@@ -42,7 +42,7 @@ const LanguageButton = styled.a`
 
 const SubMenu = styled.ul`
   width: 170px;
-  display:block;
+  display: none;
   padding: 0;
   margin: 0;
   position:absolute;
@@ -67,8 +67,13 @@ const LanguageLink = styled.a`
   }
   &:hover {
     background-color: #f0f8ff;
-    box-shadow: 1px 1px 14px 0px rgba(240, 248, 255, .6);
+    animate:all 1s;
+    box-shadow: 1px 1px 14px 0px rgba(51, 160, 255, 0.6);
   }
+`;
+
+const SyledI = styled.i`
+  font-size: .8em;
 `;
 
 const LanguageChooser = ({ langs, intl }) => {
@@ -82,13 +87,17 @@ const LanguageChooser = ({ langs, intl }) => {
     </SubMenuItem>
   );
 
+  let [menuState, setMenuState] = useState(false);
+
   return (
     <LanguageMenuWrapper>
       <Li>
-        <LanguageButton>
-            <i className="fas fa-globe"></i> {linkTitle} <i className="fas fa-sort-down"></i>
+        <LanguageButton onClick={()=> { setMenuState(!menuState); }}>
+            <i className="fas fa-globe"></i> {linkTitle} <SyledI className={menuState === false? 'fas fa-plus' : 'fas fa-minus' }></SyledI>
         </LanguageButton>
-        <SubMenu>
+        <SubMenu style={{
+            display: menuState? 'block' : 'none'
+         }}>
           {links}
         </SubMenu>
       </Li>
@@ -101,9 +110,3 @@ LanguageChooser.propTypes = {
 };
 
 export default injectIntl(LanguageChooser);
-
-/*
-<ul title={linkTitle} id="blog-links">
-  {links}
-</ul>
-*/

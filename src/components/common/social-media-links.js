@@ -40,11 +40,11 @@ const LinkDescription = styled.span`
     color: #f0f8ff;
     border-radius: 5px;
     padding: 10px;
-    left: -150px;
+    left: -30px;
     width: max-content;
     z-index: 100;
     bottom: -35px;
-    font-size: .7em;
+    font-size: 1em;
     min-width: 200px;
     text-align: center;
 `;
