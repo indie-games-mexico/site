@@ -1,31 +1,59 @@
 import PropTypes from "prop-types"
 import React from "react"
-import SelectLanguage from './SelectLanguage';
-import { Navbar, Form, FormControl, Button, Nav } from 'react-bootstrap';
+import styled from 'styled-components';
+import { LigthSocialMediaLinks } from './social-media-links';
+import  LanguageChooser  from './language-chooser';
+
+const StyledHeader = styled.header`
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, .8);;
+  height: 60px;
+  display:flex;
+  padding: 0 10px;
+`;
+
+const BrandWrapper = styled.div`
+  display:inline-block;
+  flex-grow: 1;
+`;
+
+const BrandTitle = styled.h1`
+    font-family: inherit;
+    color: #f0f8ff;
+    font-weight: 100;
+    font-style: inherit;
+    font-variant: small-caps;
+    font-size: 2.25em;
+    line-height: 1.5em;
+`;
+
+const SocialLinkWrapper = styled.div`
+  display: inline-block;
+`;
+
+const LanguageChooserWrapper = styled.div`
+  display: inline-block;
+`;
 
 
-// impmement dynamic menus
-const Header = ({langs, i18nMessages}) => {
-  return (
-  <header>
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href={`/${i18nMessages.locale}/`}>
-          { i18nMessages.title }
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
-      <SelectLanguage langs={langs} />
-      </Nav>
-      <Form inline>
-        <FormControl type="text" placeholder={i18nMessages['site.search']} className="mr-sm-2" />
-        <Button variant="outline-info">{i18nMessages['site.search']}</Button>
-        </Form>
-    </Navbar.Collapse>
-    </Navbar>
-  </header>
-  )
-}
+const Header = ({ langs, i18nMessages, socialMediaLinks }) => (
+  <StyledHeader>
+    <BrandWrapper>
+      <BrandTitle>{i18nMessages.title}</BrandTitle>
+    </BrandWrapper>
+    <SocialLinkWrapper>
+      <LigthSocialMediaLinks socialMediaLinks={socialMediaLinks}></LigthSocialMediaLinks>
+    </SocialLinkWrapper>
+    <LanguageChooserWrapper>
+      <LanguageChooser langs={langs} intl={i18nMessages}></LanguageChooser>
+    </LanguageChooserWrapper>
+  </StyledHeader>
+);
+
 
 Header.propTypes = {
   title: PropTypes.string,
@@ -36,12 +64,3 @@ Header.defaultProps = {
 }
 
 export default Header
-
-/*
-Blog links pending
-<NavDropdown title="Blog" id="blog-links">
-    <NavDropdown.Item href="#action/3.1">Game On</NavDropdown.Item>
-    <NavDropdown.Item href="#action/3.2">Our Game: Field Rivals</NavDropdown.Item>
-    <NavDropdown.Item href="#action/3.3">Characters and Attributes</NavDropdown.Item>
-</NavDropdown>
-*/

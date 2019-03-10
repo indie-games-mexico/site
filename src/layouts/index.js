@@ -6,7 +6,10 @@ import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from 'react-intl';
 import 'intl';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+import 'react-flexbox-grid/dist/react-flexbox-grid.css';
 
 const Layout = ({ children, location, i18nMessages }) => {
   return (
@@ -21,6 +24,11 @@ const Layout = ({ children, location, i18nMessages }) => {
                   locale
                   name
                 }
+              }
+              socialMediaLinks {
+                icon
+                link
+                description
               }
             }
           }
@@ -46,7 +54,7 @@ const Layout = ({ children, location, i18nMessages }) => {
                 { name: 'keywords', content: i18nMessages['seo.keywords'] },
               ]}
             />
-              <Header langs={langsMenu} i18nMessages={i18nMessages}  />
+              <Header langs={langsMenu} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks}  />
               <div>
                 {children}
               </div>

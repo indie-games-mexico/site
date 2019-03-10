@@ -6,7 +6,7 @@ module.exports = {
     },
     {
       locale: 'es',
-      name: 'Spanish'
+      name: 'Español'
     }
   ],
   defaultLangKey: 'en'
