@@ -9,6 +9,7 @@ import 'intl';
 // import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import 'react-flexbox-grid/dist/react-flexbox-grid.css';
 
 const Layout = ({ children, location, i18nMessages }) => {
   return (

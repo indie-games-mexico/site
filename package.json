@@ -19,7 +19,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-grid-layout": "^0.16.6",
+    "react-flexbox-grid": "^2.1.2",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.8.0",
     "react-jss": "^8.6.1",
