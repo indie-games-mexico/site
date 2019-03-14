@@ -2,7 +2,7 @@ module.exports = [
   {
     icon: 'fab fa-facebook',
     link: 'https://www.facebook.com/indiegamesmexico',
-    description:'Follow us on Facebook'
+    description:'Join us on Facebook'
   },
   {
     icon: 'fab fa-twitter',
@@ -12,6 +12,6 @@ module.exports = [
   {
     icon: 'fab fa-youtube',
     link: 'https://www.youtube.com/channel/UCl3kzPXG1gk_tan78Fl_hhQ',
-    description:'Follow us on Instagram'
+    description:'Subscribe on Youtube'
   }
 ];

@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 // import PropTypes from 'PropTypes';
 import styled from 'styled-components';
 
-const Ul = styled.ul`
+
+
+const UlDesktop = styled.ul`
   position:relative;
   padding:0;
   margin:0;
   list-style-type: none;
   line-height: 3.50em;
+  @media (max-width: 800px) {
+    display:none;
+  }
 `;
 
 const Li = styled.li`
@@ -30,6 +36,7 @@ const LightA = styled.a`
       display: block;
     }
   }
+
 `;
 
 const LinkDescription = styled.span`
@@ -57,11 +64,105 @@ const MediaLink = ({icon, link, description}) => (
   </Li>
 )
 
-export const LigthSocialMediaLinks = ({ socialMediaLinks }) => (
-  <Ul>
-    {socialMediaLinks.map((link, index) => <MediaLink key={index} {...link}></MediaLink>)}
-  </Ul>
+const ULMobile = styled.ul`
+  display: none;
+  position:relative;
+  padding:0;
+  margin:0;
+  list-style-type: none;
+  line-height: 3.50em;
+  @media(max-width: 801px) {
+    display:inline-block;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0
+    margin: 0;
+  }
+`;
+
+const MobileExpandButton = styled.button`
+  display: block;
+  color: #fff;
+  padding: 10px 15px;
+  display: block;
+  line-height: 1em;
+  line-height: 2.3em;
+  background-color: transparent;
+  border:none;
+`
+const MobileLi = styled.li`
+  margin-bottom:0;
+  border-bottom: solid 1px #ccc;
+  padding-left: 30px;
+  overflow: hidden;
+`;
+
+const MobileSubMenuWrapper = styled.li`
+  margin: 0;
+  ul {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    transition:all .2s cubic-bezier(0.03, 1.14, 0.99, 1.07);
+    color: transparent;
+  }
+
+  ul.show {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+const MobileSubMenuUl = styled.ul`
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+`;
+
+const DarkA = styled.a`
+  color: #000;
+  display: block;
+  text-decoration: none;
+  &:visited {
+
+  }
+`;
+
+const MobileMediaLink = ({icon, link, description}) => (
+  <MobileLi>
+    <DarkA href={link} target="blank"><i className={icon}></i> {description}</DarkA>
+  </MobileLi>
 )
+
+
+
+export const LigthSocialMediaLinks = ({ socialMediaLinks }) => {
+  const [ isMenuOpen, setMenuOpen  ] = useState(false);
+  const desktopLinks = socialMediaLinks.map((link, index) => <MediaLink key={index} {...link}></MediaLink>);
+  const mobileLinks = socialMediaLinks.map((link, index) => <MobileMediaLink key={index} {...link}></MobileMediaLink>);
+  return (
+    <>
+      <UlDesktop>
+        {desktopLinks}
+      </UlDesktop>
+      <ULMobile>
+        <li style={{ margin: 0 }}>
+          <MobileExpandButton type="button"
+              onClick={() => setMenuOpen(!isMenuOpen)}>
+                <i className={ isMenuOpen? 'far fa-caret-square-up' : 'far fa-caret-square-down' }></i>
+          </MobileExpandButton>
+        </li>
+        <MobileSubMenuWrapper>
+          <MobileSubMenuUl className={ isMenuOpen? 'show' : '' }>
+            {mobileLinks}
+          </MobileSubMenuUl>
+        </MobileSubMenuWrapper>
+      </ULMobile>
+    </>
+  )
+
+}
 
 
 
