@@ -56,13 +56,16 @@ const LinkDescription = styled.span`
     text-align: center;
 `;
 
-const MediaLink = ({icon, link, description}) => (
-  <Li>
-    <LightA href={link} target="_blank"><i className={icon}></i>
-      <LinkDescription>{description}</LinkDescription>
-    </LightA>
-  </Li>
-)
+const MediaLink = ({icon, link, description, langKey, i18nMessages}) => {
+  console.log(i18nMessages, langKey)
+  return (
+    <Li>
+      <LightA href={link} target="_blank"><i className={icon}></i>
+        <LinkDescription>{i18nMessages[langKey]} {description}</LinkDescription>
+      </LightA>
+    </Li>
+  )
+}
 
 const ULMobile = styled.ul`
   display: none;
@@ -71,7 +74,7 @@ const ULMobile = styled.ul`
   margin:0;
   list-style-type: none;
   line-height: 3.50em;
-  @media(max-width: 801px) {
+  @media(max-width: 800px) {
     display:inline-block;
   }
   ul {
@@ -129,18 +132,19 @@ const DarkA = styled.a`
   }
 `;
 
-const MobileMediaLink = ({icon, link, description}) => (
+const MobileMediaLink = ({icon, link, description, langKey, i18nMessages}) => (
   <MobileLi>
-    <DarkA href={link} target="blank"><i className={icon}></i> {description}</DarkA>
+    <DarkA href={link} target="blank"><i className={icon}></i> {i18nMessages[langKey]} {description}</DarkA>
   </MobileLi>
 )
 
 
 
-export const LigthSocialMediaLinks = ({ socialMediaLinks }) => {
+export const LigthSocialMediaLinks = ({ socialMediaLinks, i18nMessages }) => {
+
   const [ isMenuOpen, setMenuOpen  ] = useState(false);
-  const desktopLinks = socialMediaLinks.map((link, index) => <MediaLink key={index} {...link}></MediaLink>);
-  const mobileLinks = socialMediaLinks.map((link, index) => <MobileMediaLink key={index} {...link}></MobileMediaLink>);
+  const desktopLinks = socialMediaLinks.map((link, index) => <MediaLink key={index} {...link} i18nMessages={i18nMessages}></MediaLink>);
+  const mobileLinks = socialMediaLinks.map((link, index) => <MobileMediaLink key={index} {...link} i18nMessages={i18nMessages}></MobileMediaLink>);
   return (
     <>
       <UlDesktop>

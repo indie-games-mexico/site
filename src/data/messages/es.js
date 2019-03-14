@@ -6,5 +6,8 @@ module.exports = {
   'locale': 'es',
   'site.search': 'Buscar',
   'seo.description': 'Empresa Mexicana de Videos Juegos',
-  'seo.keywords': 'Video juegos'
+  'seo.keywords': 'Video juegos',
+  'join.us': 'Unete a',
+  'follow.us': 'Siguenos en',
+  'subscribe.on': 'Subscribete en '
 };
