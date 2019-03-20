@@ -107,13 +107,15 @@ const MobileSubMenuWrapper = styled.li`
     width: 0px;
     height: 0px;
     overflow: hidden;
-    transition:all .2s cubic-bezier(0.03, 1.14, 0.99, 1.07);
+    transition:all .4s cubic-bezier(0.03, 1.14, 0.99, 1.07);
     color: transparent;
+    opacity:0;
   }
 
   ul.show {
     width: 100%;
     height: auto;
+    opacity: .95;
   }
 `;
 
