@@ -5,12 +5,15 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import  styled  from 'styled-components';
 
-const LanguageMenuWrapper = styled.ul`
+const DesktopLanguageSelector = styled.ul`
     position:relative;
     padding:0;
     margin:0;
     list-style-type: none;
     line-height: 3.50em;
+    @media (max-width: 800px) {
+      display:none;
+    }
 `;
 
 const Li = styled.li`
@@ -76,32 +79,129 @@ const SyledI = styled.i`
   font-size: .8em;
 `;
 
+const MobileLanguageSelector = styled.ul`
+  display: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  line-height: 3.5em;
+  @media(max-width: 800px) {
+    display: inline-block;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+`;
+
+const MobileExpandButton = styled.button`
+  display: block;
+  color: #fff;
+  padding: 10px 15px;
+  display: block;
+  line-height: 1em;
+  line-height: 2.3em;
+  background-color: transparent;
+  border:none;
+`
+const MobileLi = styled.li`
+  margin-bottom:0;
+  border-bottom: solid 1px #ccc;
+  padding-left: 30px;
+  overflow: hidden;
+`;
+
+const MobileSubMenuWrapper = styled.li`
+  margin: 0;
+  ul {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    transition:all .4s cubic-bezier(0.03, 1.14, 0.99, 1.07);
+    color: transparent;
+    opacity:0;
+  }
+
+  ul.show {
+    width: 100%;
+    height: auto;
+    opacity: .95;
+  }
+`;
+
+const MobileSubMenuUl = styled.ul`
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+`;
+
+const DarkA = styled.a`
+  color: #000;
+  display: block;
+  text-decoration: none;
+  &:visited {
+
+  }
+`;
+
+const MobileMediaLink = ({icon, link, description, langKey}) => (
+  <MobileLi>
+    <DarkA href={link} target="blank"><i className={icon}></i> {description}</DarkA>
+  </MobileLi>
+)
+
+
+
+
+
+
 const LanguageChooser = ({ langs, intl }) => {
   const linkTitle = intl.formatMessage({id: 'language'});
   const currentLocale = intl.formatMessage({id: 'locale'});
-  const links = langs
-                .map(lang => Object.assign({}, lang, { link: `/${lang.langKey.locale}/`, active: currentLocale === lang.langKey.locale }))
+  const linkData = langs
+                   .map(lang => Object.assign({}, lang, { link: `/${lang.langKey.locale}/`, active: currentLocale === lang.langKey.locale }));
+  const links =  linkData
                 .map(lang =>
-    <SubMenuItem key={lang.langKey.locale } active={lang.active}>
-      <LanguageLink href={lang.link}>{lang.langKey.name}</LanguageLink>
-    </SubMenuItem>
-  );
+                    <SubMenuItem key={lang.langKey.locale } active={lang.active}>
+                      <LanguageLink href={lang.link}>{lang.langKey.name}</LanguageLink>
+                    </SubMenuItem>);
+  const mobileLinks = linkData
+                      .map(lang => (
+                        <MobileMediaLink key={lang.langKey.locale} link={lang.link} description={lang.langKey.name}></MobileMediaLink>
+                      ))
 
-  let [menuState, setMenuState] = useState(false);
+  let [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <LanguageMenuWrapper>
+    <>
+    <DesktopLanguageSelector>
       <Li>
-        <LanguageButton onClick={()=> { setMenuState(!menuState); }}>
-            <i className="fas fa-globe"></i> {linkTitle} <SyledI className={menuState === false? 'fas fa-plus' : 'fas fa-minus' }></SyledI>
+        <LanguageButton onClick={()=> { setMenuOpen(!isMenuOpen); }}>
+            <i className="fas fa-globe"></i> {linkTitle} <SyledI className={isMenuOpen === false? 'fas fa-plus' : 'fas fa-minus' }></SyledI>
         </LanguageButton>
         <SubMenu style={{
-            display: menuState? 'block' : 'none'
+            display: isMenuOpen? 'block' : 'none'
          }}>
           {links}
         </SubMenu>
       </Li>
-    </LanguageMenuWrapper>
+    </DesktopLanguageSelector>
+    <MobileLanguageSelector>
+    <li style={{ margin: 0 }}>
+      <MobileExpandButton type="button"
+          onClick={() => setMenuOpen(!isMenuOpen)}>
+            <i className={ isMenuOpen? 'fas fa-globe fa-spin' : 'fas fa-globe' }></i>
+      </MobileExpandButton>
+    </li>
+    <MobileSubMenuWrapper>
+      <MobileSubMenuUl className={ isMenuOpen? 'show' : '' }>
+        {mobileLinks}
+      </MobileSubMenuUl>
+    </MobileSubMenuWrapper>
+    </MobileLanguageSelector>
+    </>
   );
 };
 

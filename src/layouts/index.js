@@ -28,7 +28,8 @@ const Layout = ({ children, location, i18nMessages }) => {
               socialMediaLinks {
                 icon
                 link
-                description
+                description,
+                langKey
               }
             }
           }

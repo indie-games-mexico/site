@@ -46,7 +46,7 @@ const Header = ({ langs, i18nMessages, socialMediaLinks }) => (
       <BrandTitle>{i18nMessages.title}</BrandTitle>
     </BrandWrapper>
     <SocialLinkWrapper>
-      <LigthSocialMediaLinks socialMediaLinks={socialMediaLinks}></LigthSocialMediaLinks>
+      <LigthSocialMediaLinks i18nMessages={i18nMessages} socialMediaLinks={socialMediaLinks}></LigthSocialMediaLinks>
     </SocialLinkWrapper>
     <LanguageChooserWrapper>
       <LanguageChooser langs={langs} intl={i18nMessages}></LanguageChooser>
