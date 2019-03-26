@@ -36,7 +36,6 @@ const Layout = ({ children, location, i18nMessages }) => {
         }
       `}
       render={data => {
-        console.log('i18nMessages', i18nMessages);
         const url = location.pathname;
         const { langs, defaultLangKey } = data.site.siteMetadata.languages;
         const langKey = getCurrentLangKey(langs, defaultLangKey, url);

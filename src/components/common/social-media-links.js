@@ -57,7 +57,6 @@ const LinkDescription = styled.span`
 `;
 
 const MediaLink = ({icon, link, description, langKey, i18nMessages}) => {
-  console.log(i18nMessages, langKey)
   return (
     <Li>
       <LightA href={link} target="_blank"><i className={icon}></i>
