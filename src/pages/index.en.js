@@ -4,6 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image";
 
+import { ApplicationContext } from '../context/Application';
 import Layout from "../layouts/en";
 import Hero from '../components/common/hero';
 import { Panel } from '../components/common/panel';
@@ -20,7 +21,11 @@ const CenteredParagraph = styled.div`
 
 const IndexPage = (props) => (
   <Layout location={ props.location }>
-      <Hero/>
+      <ApplicationContext.Consumer>
+        {
+          context => <Hero toggleMenuStyles={context.toggleMenuStyles}/>
+        }
+      </ApplicationContext.Consumer>
       <Container>
         <MainPanel>
           <Panel>

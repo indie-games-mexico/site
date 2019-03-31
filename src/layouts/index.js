@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ApplicationContext } from '../context/Application';
 import Header from '../components/common/header'
 import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from 'react-intl';
 import 'intl';
-// import 'bootstrap/dist/css/bootstrap.css';
+
 import './index.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'react-flexbox-grid/dist/react-flexbox-grid.css';
@@ -54,10 +55,16 @@ const Layout = ({ children, location, i18nMessages }) => {
                 { name: 'keywords', content: i18nMessages['seo.keywords'] },
               ]}
             />
-              <Header langs={langsMenu} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks}  />
-              <div>
-                {children}
-              </div>
+             <ApplicationContext.Consumer>
+             { theme => (
+               <>
+               <Header langs={langsMenu} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks} theme={theme}/>
+                 <div>
+                   {children}
+                 </div>
+               </>
+             )}
+             </ApplicationContext.Consumer>
             </div>
           </IntlProvider>
         )

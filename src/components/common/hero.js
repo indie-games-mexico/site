@@ -3,31 +3,42 @@ import logo from '../../images/indie-games-logo.svg';
 import { fromEvent } from 'rxjs';
 import { map, debounceTime } from 'rxjs/operators';
 
-const Image = () => {
+
+const Hero = ({toggleMenuStyles}) => {
+
   // convert into reusable effectHook
   // use context to set the right styles in hover social networks hover descriptions
   const ref = React.createRef();
   const windowScroll$ = fromEvent(window, 'scroll')
                        .pipe(
-                         debounceTime(500),
+                         debounceTime(200),
                          map(() => ref.current.getBoundingClientRect().bottom - 150 > 0?  true : false)
                        );
+
+
   useEffect(() => {
     const subscription = windowScroll$.subscribe(
-                          onScreen => console.log('OnScreen', onScreen)
-    )
+                          onScreen => {
+                            if (onScreen) {
+                              toggleMenuStyles('light');
+                            } else {
+                              toggleMenuStyles('dark');
+                            }
+                          }
+    );
     return () => {
       subscription.unsubscribe();
-    }
+    };
   });
 
   return (
     <>
-    <img src={logo} alt="Indie Games Mexico" />
-    <div ref={ref}></div>
+      <img src={logo} alt="Indie Games Mexico" />
+      <div ref={ref}></div>
     </>
   );
 }
-export default () => (
-  <Image />
+
+export default (props) => (
+  <Hero {...props} />
 );
