@@ -5,11 +5,11 @@ import { map, debounceTime } from 'rxjs/operators';
 
 
 const Hero = ({toggleMenuStyles}) => {
-
+  const windowGlobal = typeof window !== 'undefined' && window;
   // convert into reusable effectHook
   // use context to set the right styles in hover social networks hover descriptions
   const ref = React.createRef();
-  const windowScroll$ = fromEvent(window, 'scroll')
+  const windowScroll$ = fromEvent(windowGlobal, 'scroll')
                        .pipe(
                          debounceTime(200),
                          map(() => ref.current.getBoundingClientRect().bottom - 150 > 0?  true : false)
