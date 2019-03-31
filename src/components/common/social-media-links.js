@@ -43,8 +43,6 @@ const LinkDescription = styled.span`
     display: none;
     position: absolute;
     color: inherit;
-    background-color: rgba(255, 255, 255, 0.4);
-    color: #f0f8ff;
     border-radius: 5px;
     padding: 10px;
     left: -30px;
@@ -54,14 +52,23 @@ const LinkDescription = styled.span`
     font-size: 1em;
     min-width: 200px;
     text-align: center;
+    &.light {
+      background-color: rgba(255, 255, 255, 0.4);
+      color: #f0f8ff;
+      transition: all .5s ease-in;
+    }
+    &.dark {
+      background-color: rgba(0,0,0,.8);
+      color: #f0f8ff;
+      bottom: -36px;
+    }
 `;
 
-const MediaLink = ({icon, link, description, langKey, i18nMessages}) => {
-  console.log(i18nMessages, langKey)
+const MediaLink = ({icon, link, description, langKey, i18nMessages, themeHoveStyle}) => {
   return (
     <Li>
       <LightA href={link} target="_blank"><i className={icon}></i>
-        <LinkDescription>{i18nMessages[langKey]} {description}</LinkDescription>
+        <LinkDescription className={themeHoveStyle}>{i18nMessages[langKey]} {description}</LinkDescription>
       </LightA>
     </Li>
   )
@@ -142,14 +149,14 @@ const MobileMediaLink = ({icon, link, description, langKey, i18nMessages}) => (
 
 
 
-export const LigthSocialMediaLinks = ({ socialMediaLinks, i18nMessages }) => {
+export const LigthSocialMediaLinks = ({ socialMediaLinks, i18nMessages, menuHoverDescriptionStyle, themeHoveStyle }) => {
 
   const [ isMenuOpen, setMenuOpen  ] = useState(false);
-  const desktopLinks = socialMediaLinks.map((link, index) => <MediaLink key={index} {...link} i18nMessages={i18nMessages}></MediaLink>);
+  const desktopLinks = socialMediaLinks.map((link, index) => <MediaLink key={index} {...link} i18nMessages={i18nMessages} themeHoveStyle={themeHoveStyle}></MediaLink>);
   const mobileLinks = socialMediaLinks.map((link, index) => <MobileMediaLink key={index} {...link} i18nMessages={i18nMessages}></MobileMediaLink>);
   return (
     <>
-      <UlDesktop>
+      <UlDesktop data-attr={menuHoverDescriptionStyle}>
         {desktopLinks}
       </UlDesktop>
       <ULMobile>

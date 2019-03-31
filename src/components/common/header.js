@@ -40,20 +40,25 @@ const LanguageChooserWrapper = styled.div`
 `;
 
 
-const Header = ({ langs, i18nMessages, socialMediaLinks }) => (
-  <StyledHeader>
-    <BrandWrapper>
-      <BrandTitle>{i18nMessages.title}</BrandTitle>
-    </BrandWrapper>
-    <SocialLinkWrapper>
-      <LigthSocialMediaLinks i18nMessages={i18nMessages} socialMediaLinks={socialMediaLinks}></LigthSocialMediaLinks>
-    </SocialLinkWrapper>
-    <LanguageChooserWrapper>
-      <LanguageChooser langs={langs} intl={i18nMessages}></LanguageChooser>
-    </LanguageChooserWrapper>
-  </StyledHeader>
-);
-
+const Header = ({ langs, i18nMessages, socialMediaLinks, menuHoverDescriptionStyle, theme }) =>  {
+    return (
+      <StyledHeader>
+        <BrandWrapper>
+          <BrandTitle>{i18nMessages.title}</BrandTitle>
+        </BrandWrapper>
+        <SocialLinkWrapper>
+          <LigthSocialMediaLinks
+                i18nMessages={i18nMessages}
+                socialMediaLinks={socialMediaLinks}
+                menuHoverDescriptionStyle={menuHoverDescriptionStyle}
+                themeHoveStyle={theme.mainMenuStyles}></LigthSocialMediaLinks>
+        </SocialLinkWrapper>
+        <LanguageChooserWrapper>
+          <LanguageChooser langs={langs} intl={i18nMessages}></LanguageChooser>
+        </LanguageChooserWrapper>
+      </StyledHeader>
+    );
+};
 
 Header.propTypes = {
   title: PropTypes.string,
