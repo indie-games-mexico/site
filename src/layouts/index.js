@@ -63,7 +63,7 @@ const Layout = ({ children, location, i18nMessages }) => {
                  <div>
                    {children}
                  </div>
-                 <Joystick width={100} height={100} />
+                 <Joystick width={50} height={50} />
                </>
              )}
              </ApplicationContext.Consumer>

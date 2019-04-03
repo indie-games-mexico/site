@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { fromEvent, interval } from 'rxjs';
-import { mapTo, pairwise, take, debounceTime, tap, throttleTime } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
+import { map, pairwise, debounceTime, tap } from 'rxjs/operators';
 
 import joystickNeutral from '../../images/joystick-neutral.svg';
 import joystickUp from '../../images/joystick-up.svg';
@@ -10,11 +10,14 @@ import joystickDown from '../../images/joystick-down.svg';
 
 const JoystickWrapper = styled.div`
   position: fixed;
-  bottom: 150px;
-  left: 50px;
-  opacity: .4;
+  bottom: 25px;
+  right: 35px;
+  opacity: .8;
   &.moving {
     opacity: 1;
+  }
+  @media (max-width: 800px) {
+    display:none;
   }
 `;
 
@@ -32,10 +35,20 @@ export const Joystick = ({width, height}) => {
     const scrollSubscription = fromEvent(windowGlobal, 'scroll')
         .pipe(
           tap(() => setMoveClass('moving')),
-          mapTo(windowGlobal.scrollY || windowGlobal.document.documentElement.scrollTop),
-          throttleTime(300)
+          map(() => windowGlobal.scrollY || windowGlobal.document.documentElement.scrollTop),
+          pairwise(),
+          tap(values => {
+            const [ previous, current ] = values;
+            if (previous < current) {
+              setJoystickState(joystickDown);
+            } else {
+              setJoystickState(joystickUp);
+            }
+          }),
+          debounceTime(50)
         ).subscribe(values => {
-          // left here make sure the class none is added when the user stops scrolling
+          setJoystickState(joystickNeutral);
+          setMoveClass('');
         }, error => console.log('ERROR', error));
 
     return () => {
@@ -45,7 +58,7 @@ export const Joystick = ({width, height}) => {
 
   return (
     <JoystickWrapper style={style} className={moveClass}>
-      <img src={joystickNeutral} alt="Game on" />
+      <img src={joystickState} alt="Game on" />
     </JoystickWrapper>
   );
 };
