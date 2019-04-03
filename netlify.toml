@@ -6,3 +6,7 @@
   from = "/en/*"
   to = "/en/404"
   status = 404
+  [[redirects]]
+    from = "/es/*"
+    to = "/es/404"
+    status = 404
