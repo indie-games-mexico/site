@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ApplicationContext } from '../context/Application';
-import Header from '../components/common/header'
+import Header from '../components/common/header';
+import { Joystick } from '../components/common/joystick';
 import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { StaticQuery, graphql } from "gatsby"
@@ -62,6 +63,7 @@ const Layout = ({ children, location, i18nMessages }) => {
                  <div>
                    {children}
                  </div>
+                 <Joystick width={50} height={50} />
                </>
              )}
              </ApplicationContext.Consumer>
