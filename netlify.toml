@@ -2,6 +2,7 @@
   from = "/"
   to = "/en"
   status = 301
+[[redirects]]
   from = "/en/*"
   to = "/en/404"
   status = 404
