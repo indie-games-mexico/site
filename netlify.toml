@@ -2,3 +2,6 @@
   from = "/"
   to = "/en"
   status = 301
+  from = "/en/*"
+  to = "/en/404"
+  status = 404
