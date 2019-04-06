@@ -1,6 +1,13 @@
 module.exports = {
   'title': 'Indie Games Mexico',
   'blog': 'Blog',
+  'menu.ourstory': 'Historia',
+  'menu.games': 'Juegos',
+  'menu.studios': 'Estudios',
+  'menu.careers': 'Carreras',
+  'menu.internship': 'Internados',
+  'menu.community': 'Comunidad',
+  'menu.news': 'Noticias',
   'language': 'Seleccione Lenguage',
   'localeName': 'Español MX',
   'locale': 'es',

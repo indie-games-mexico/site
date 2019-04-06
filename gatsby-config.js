@@ -1,5 +1,6 @@
 const languages = require('./src/data/languages');
 const socialMediaLinks = require('./src/data/social-media-links');
+const mainMenuLinks = require('./src/data/main-menu-links');
 
 module.exports = {
   siteMetadata: {
@@ -8,6 +9,7 @@ module.exports = {
     author: '@indiegamesmexico',
     languages,
     socialMediaLinks,
+    mainMenuLinks
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -1,7 +1,11 @@
-import PropTypes from "prop-types"
 import React from "react"
+import PropTypes from "prop-types"
 import styled from 'styled-components';
+import { BrandLogo } from './brand-logo';
+import  { MainMenu } from './main-menu-links';
 import { LigthSocialMediaLinks } from './social-media-links';
+
+
 import  LanguageChooser  from './language-chooser';
 
 const StyledHeader = styled.header`
@@ -11,24 +15,27 @@ const StyledHeader = styled.header`
   width: 100%;
   z-index: 1000;
   background-color: rgba(0, 0, 0, .8);;
-  height: 60px;
+  height: 80px;
   display:flex;
   padding: 0 10px;
 `;
 
 const BrandWrapper = styled.div`
   display:inline-block;
-  flex-grow: 1;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
 `;
 
-const BrandTitle = styled.h1`
-    font-family: inherit;
-    color: #f0f8ff;
-    font-weight: 100;
-    font-style: inherit;
-    font-variant: small-caps;
-    font-size: 2.25em;
-    line-height: 1.5em;
+const BrandLogoWrapper = styled.div`
+  width: 100px;
+  display:inline-block;
+  text-align: center;
+`;
+
+const MainMenuWrapper = styled.div`
+  display: inline-block;
+  flex-grow: 1;
 `;
 
 const SocialLinkWrapper = styled.div`
@@ -40,12 +47,17 @@ const LanguageChooserWrapper = styled.div`
 `;
 
 
-const Header = ({ langs, i18nMessages, socialMediaLinks, menuHoverDescriptionStyle, theme }) =>  {
+const Header = ({ langs, i18nMessages, socialMediaLinks, menuHoverDescriptionStyle, mainMenuLinks, theme }) =>  {
     return (
       <StyledHeader>
         <BrandWrapper>
-          <BrandTitle>{i18nMessages.title}</BrandTitle>
+          <BrandLogoWrapper>
+            <BrandLogo />
+          </BrandLogoWrapper>
         </BrandWrapper>
+        <MainMenuWrapper>
+          <MainMenu i18nMessages={i18nMessages} mainMenuLinks={mainMenuLinks}></MainMenu>
+        </MainMenuWrapper>
         <SocialLinkWrapper>
           <LigthSocialMediaLinks
                 i18nMessages={i18nMessages}

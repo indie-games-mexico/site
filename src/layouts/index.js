@@ -30,8 +30,13 @@ const Layout = ({ children, location, i18nMessages }) => {
               socialMediaLinks {
                 icon
                 link
-                description,
+                description
                 langKey
+              }
+              mainMenuLinks {
+                link
+                langKey
+                altKey
               }
             }
           }
@@ -59,7 +64,12 @@ const Layout = ({ children, location, i18nMessages }) => {
              <ApplicationContext.Consumer>
              { theme => (
                <>
-               <Header langs={langsMenu} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks} theme={theme}/>
+               <Header
+                      langs={langsMenu}
+                      i18nMessages={i18nMessages}
+                      socialMediaLinks={data.site.siteMetadata.socialMediaLinks}
+                      mainMenuLinks={data.site.siteMetadata.mainMenuLinks}
+                      theme={theme}/>
                  <div>
                    {children}
                  </div>
