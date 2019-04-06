@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "../components/common/seo";
 import styled from 'styled-components';
-import './404.css';
+// import './404.css';
 
 const Background = styled.div`
   width: 100vw;
