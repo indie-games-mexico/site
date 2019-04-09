@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import  styled  from 'styled-components';
 
-const DesktopLanguageSelector = styled.ul`
+const DesktopLanguageSelector = styled.div`
     position:relative;
     padding:0;
     margin:0;
@@ -16,27 +16,19 @@ const DesktopLanguageSelector = styled.ul`
     }
 `;
 
-const Li = styled.li`
-  display: inline-block;
-  line-height: 1em;
-  a {
-    cursor: pointer;
-  }
-`;
-
 const LanguageButton = styled.a`
     user-select: none;
-    color: white;
+    color: #ccc;
+    cursor:pointer;
     text-decoration: none;
     padding: 10px 15px;
     display: block;
+    font-size: .7em;
     line-height: 1em;
     &:visited {
       color: white;
     }
     &:hover {
-      background-color: rgba(200, 200, 200, 0.4);
-      border-radius: 5px;
       span {
         display: block;
       }
@@ -48,9 +40,10 @@ const SubMenu = styled.ul`
   display: none;
   padding: 0;
   margin: 0;
+  right: 15px;
   position:absolute;
-  background-color: white;
-  border-radius: 5px;
+  background-color: rgba(204,204,204,.8);;
+
 `;
 
 const SubMenuItem = styled.li`
@@ -58,6 +51,7 @@ const SubMenuItem = styled.li`
   padding: 5px;
   color: black;
   margin-bottom: 0;
+  line-height: 1em;
 `;
 
 const LanguageLink = styled.a`
@@ -75,9 +69,6 @@ const LanguageLink = styled.a`
   }
 `;
 
-const SyledI = styled.i`
-  font-size: .8em;
-`;
 
 const MobileLanguageSelector = styled.ul`
   display: none;
@@ -102,7 +93,7 @@ const MobileExpandButton = styled.button`
   padding: 10px 15px;
   display: block;
   line-height: 1em;
-  line-height: 2.3em;
+  line-height: 3.4em;
   background-color: transparent;
   border:none;
 `
@@ -177,16 +168,14 @@ const LanguageChooser = ({ langs, intl }) => {
   return (
     <>
     <DesktopLanguageSelector>
-      <Li>
         <LanguageButton onClick={()=> { setMenuOpen(!isMenuOpen); }}>
-            <i className="fas fa-globe"></i> {linkTitle} <SyledI className={isMenuOpen === false? 'fas fa-plus' : 'fas fa-minus' }></SyledI>
+            <i className="fas fa-globe"></i> {linkTitle}
         </LanguageButton>
         <SubMenu style={{
             display: isMenuOpen? 'block' : 'none'
          }}>
           {links}
         </SubMenu>
-      </Li>
     </DesktopLanguageSelector>
     <MobileLanguageSelector>
     <li style={{ margin: 0 }}>

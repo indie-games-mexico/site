@@ -3,7 +3,6 @@ import React from "react"
 import styled from 'styled-components';
 import { BrandLogo } from './brand-logo';
 import  { MainMenu } from './main-menu-links';
-import { LigthSocialMediaLinks } from './social-media-links';
 import  LanguageChooser  from './language-chooser';
 
 const StyledHeader = styled.header`
@@ -34,10 +33,9 @@ const BrandLogoWrapper = styled.div`
 const MainMenuWrapper = styled.div`
   display: inline-block;
   flex-grow: 1;
-`;
-
-const SocialLinkWrapper = styled.div`
-  display: inline-block;
+  @media (max-width: 800px) {
+    text-align: right;
+  }
 `;
 
 const LanguageChooserWrapper = styled.div`
@@ -56,13 +54,6 @@ const Header = ({ langs, i18nMessages, socialMediaLinks, menuHoverDescriptionSty
         <MainMenuWrapper>
           <MainMenu i18nMessages={i18nMessages} mainMenuLinks={mainMenuLinks}></MainMenu>
         </MainMenuWrapper>
-        <SocialLinkWrapper>
-          <LigthSocialMediaLinks
-                i18nMessages={i18nMessages}
-                socialMediaLinks={socialMediaLinks}
-                menuHoverDescriptionStyle={menuHoverDescriptionStyle}
-                themeHoveStyle={theme.mainMenuStyles}></LigthSocialMediaLinks>
-        </SocialLinkWrapper>
         <LanguageChooserWrapper>
           <LanguageChooser langs={langs} intl={i18nMessages}></LanguageChooser>
         </LanguageChooserWrapper>

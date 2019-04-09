@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import logo from '../../images/indie-games-logo.svg';
-import { fromEvent } from 'rxjs';
-import { map, debounceTime } from 'rxjs/operators';
+// import { fromEvent } from 'rxjs';
+// import { map, debounceTime } from 'rxjs/operators';
 
 
 const Hero = ({toggleMenuStyles}) => {
-  const windowGlobal = typeof window !== 'undefined' && window;
-  // convert into reusable effectHook
-  // use context to set the right styles in hover social networks hover descriptions
+  // after removing social links from the top we dont need this effect but it may be useful
+  // if the main menu has sub options.
+
   const ref = React.createRef();
+  /*
+  const windowGlobal = typeof window !== 'undefined' && window;
   const windowScroll$ = fromEvent(windowGlobal, 'scroll')
                        .pipe(
                          debounceTime(200),
@@ -30,7 +32,7 @@ const Hero = ({toggleMenuStyles}) => {
       subscription.unsubscribe();
     };
   });
-
+  */
   return (
     <>
       <img src={logo} alt="Indie Games Mexico" />
