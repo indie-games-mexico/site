@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, .8);;
+  background-color: rgba(0, 0, 0, .8);
   height: 80px;
   display:flex;
   padding: 0 10px;
