@@ -1,5 +1,7 @@
 import React from 'react';
-import logo from '../../images/indie-games-logo.svg';
+import { StaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+// import logo from '../../images/indie-games-logo.svg';
 // import { fromEvent } from 'rxjs';
 // import { map, debounceTime } from 'rxjs/operators';
 
@@ -35,7 +37,20 @@ const Hero = ({toggleMenuStyles}) => {
   */
   return (
     <>
-      <img src={logo} alt="Indie Games Mexico" />
+    <StaticQuery
+      query={graphql`
+        query {
+          placeholderImage: file(relativePath: { eq: "team.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 2040) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      `}
+      render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    />
       <div ref={ref}></div>
     </>
   );

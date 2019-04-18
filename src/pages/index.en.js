@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
 import { ApplicationContext } from '../context/Application';
