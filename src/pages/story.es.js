@@ -7,7 +7,7 @@ import { Panel } from '../components/common/panel';
 import { Container } from '../components/common/container';
 import { H1, H2, Strong, CenteredP, A } from '../components/common/elements';
 
-import Layout from "../layouts/en";
+import Layout from "../layouts/es";
 
 const StoryPage = (props) => (
 <Layout location={props.location}>
@@ -125,7 +125,6 @@ const StoryPage = (props) => (
                     </>}
                 />
         </Panel>
-        
     </Container>
 </Layout>
 );
