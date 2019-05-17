@@ -59,30 +59,28 @@ const StoryPage = (props) => (
                                 <Row>
                                     <Col lg={12}>
                                         <CenteredP>
-                                            The ambitious idea of creating something (Indie Games Mexico) was conceived in december 2015 by Esther Lozano, Juan Ibarra and Miguel 
-                                            who share a background in computer science and a passion for video games. 
-                                            It all started as a desire to have an enthusiastic community and space in the region for video game development where people can share ideas, participate in projects and learn from each other. 
+                                        La ambiciosa idea de crear algo (Indie Games México) fue concebida en diciembre de 2015 por Esther Lozano, Juan Ibarra y Miguel, quienes comparten una formación en informática y una pasión por los videojuegos. Todo comenzó como un deseo de tener una comunidad y espacio entusiastas en la región para el desarrollo de videojuegos donde las personas puedan compartir ideas, participar en proyectos y aprender unos de otros.
                                         </CenteredP>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col lg={12}>
                                         <CenteredP>
-                                            The founders started to work on a game themselves to put their names outhere and people started to notice and gain interest in the project.
-                                            The game <strong>Field Rivals</strong> which is now the company's flagship, received positive feedback among the community and events such as <A href="http://west.paxsite.com/" target="_blank">PaxWest</A> in Seattle WA and <A href="http://gamacon.mx/" target="_blank">Gamacon</A> in Tijuana B.C. As a result the company decided to formalize Indie Games Mexico.
+                                            Los fundadores empezaron a trabajar en un juego ellos mismos para poner sus nombres y la gente comenzó a darse cuenta y ganar interés en el proyecto. 
+                                            El juego Field Rivals, que ahora es el buque insignia de la compañía, recibió comentarios positivos entre la comunidad y eventos como <A href="http://west.paxsite.com/" target="_blank">PaxWest</A> en Seattle WA y <A href="http://gamacon.mx/" target="_blank">Gamacon</A> en Tijuana B.C. Como resultado, la empresa decidió formalizar Indie Games México.
                                         </CenteredP>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col xs={12} md={12} lg={6}>
                                             <CenteredP>
-                                                <Strong>This is how it all started</Strong>
+                                                <Strong>Así es como todo comenzó</Strong>
                                             </CenteredP>
                                             <Img fluid={data.paperCards.childImageSharp.fluid} />
                                     </Col>
                                     <Col xs={12} md={12} lg={6}>
                                         <CenteredP>
-                                            <Strong>And it evolved to</Strong>
+                                            <Strong>La evolución</Strong>
                                         </CenteredP>
                                         <Img fluid={data.evolution.childImageSharp.fluid} />
                                     </Col>
@@ -90,26 +88,26 @@ const StoryPage = (props) => (
                                 <Row>
                                     <Col lg={12}>
                                         <CenteredP>
-                                            As we started to make a name for ourselves, people from different backgrounds like artists, musicians and programmers  decided to join forces with Indie Games Mexico.
+                                        Cuando empezamos a hacer un nombre para nosotros mismos, personas de diferentes orígenes como artistas, músicos y programadores decidieron unir fuerzas con Indie Games México.
                                         </CenteredP>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col lg={4} xs={12}>
                                         <CenteredP>
-                                            <Strong>Won Prize</Strong>
+                                            <Strong>Premio Ganado</Strong>
                                         </CenteredP>
                                         <Img fluid={data.square1.childImageSharp.fluid} />
                                     </Col>
                                     <Col lg={4} xs={12}>
                                         <CenteredP>
-                                            <Strong>Acknowledgement to our effort</Strong>
+                                            <Strong>Reconocimiento al esfuerzo</Strong>
                                         </CenteredP>
                                         <Img fluid={data.square2.childImageSharp.fluid} />
                                     </Col>
                                     <Col lg={4} xs={12}>
                                         <CenteredP>
-                                            <Strong>Community</Strong>
+                                            <Strong>Comunidad</Strong>
                                         </CenteredP>
                                         <Img fluid={data.square3.childImageSharp.fluid} />
                                     </Col>
@@ -117,9 +115,9 @@ const StoryPage = (props) => (
                                 <Row><Col lg={12}>&nbsp;</Col></Row>
                                 <Row>
                                     <Col lg={12}>
-                                        <H2>Future</H2>
+                                        <H2>Futuro</H2>
                                         <CenteredP>
-                                            A great effort is being done to release our first video game Field Rivals while also promoting video game development in our region.
+                                            Se está haciendo un gran esfuerzo para lanzar el primer videojuego Field Rivals y al mismo tiempo promover el desarrollo de videojuegos en nuestra región.
                                         </CenteredP>
                                     </Col>
                                 </Row>

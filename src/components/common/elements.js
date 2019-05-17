@@ -18,6 +18,11 @@ export const A = styled.a`
   }
 `;
 
+export const Strong = styled.strong`
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  font-weight: bold;
+`;
+
 export const P = styled.p`
   font-family: 'Rajdhani', sans-serif;
 `;
