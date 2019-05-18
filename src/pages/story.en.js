@@ -3,16 +3,16 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image";
 
-import { Panel } from '../components/common/panel';
+import { Banner } from '../components/common/banner';
 import { Container } from '../components/common/container';
-import { H1, H2, Strong, CenteredP, A } from '../components/common/elements';
+import { H2, Strong, CenteredP, A } from '../components/common/elements';
 
 import Layout from "../layouts/en";
 
 const StoryPage = (props) => (
 <Layout location={props.location}>
+    <Banner src="story" title="story"></Banner>
     <Container>
-        <Panel>
             <StaticQuery
                 query={graphql`
                                     query {
@@ -54,10 +54,10 @@ const StoryPage = (props) => (
                                     }
                             `}
                     render={data => <>
-                        <H1>Story</H1>
                             <Grid>
                                 <Row>
                                     <Col lg={12}>
+                                    <H2>Early Days</H2>
                                         <CenteredP>
                                             The ambitious idea of creating something (Indie Games Mexico) was conceived in december 2015 by Esther Lozano, Juan Ibarra and Miguel Velez
                                             who share a background in computer science and a passion for video games. 
@@ -125,9 +125,7 @@ const StoryPage = (props) => (
                                 </Row>
                             </Grid>
                     </>}
-                />
-        </Panel>
-        
+                />    
     </Container>
 </Layout>
 );

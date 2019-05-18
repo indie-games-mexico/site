@@ -3,16 +3,16 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image";
 
-import { Panel } from '../components/common/panel';
+import { Banner } from '../components/common/banner';
 import { Container } from '../components/common/container';
-import { H1, H2, Strong, CenteredP, A } from '../components/common/elements';
+import { H2, Strong, CenteredP, A } from '../components/common/elements';
 
 import Layout from "../layouts/es";
 
 const StoryPage = (props) => (
 <Layout location={props.location}>
+    <Banner src="story" title="Historia"></Banner>
     <Container>
-        <Panel>
             <StaticQuery
                 query={graphql`
                                     query {
@@ -54,10 +54,10 @@ const StoryPage = (props) => (
                                     }
                             `}
                     render={data => <>
-                        <H1>Historia</H1>
                             <Grid>
                                 <Row>
                                     <Col lg={12}>
+                                        <H2>En los incios</H2>
                                         <CenteredP>
                                         La ambiciosa idea de crear algo (Indie Games México) fue concebida en diciembre de 2015 por Esther Lozano, Juan Ibarra y Miguel Velez, quienes comparten una formación en informática y una pasión por los videojuegos. Todo comenzó como un deseo de tener una comunidad y espacio entusiastas en la región para el desarrollo de videojuegos donde las personas puedan compartir ideas, participar en proyectos y aprender unos de otros.
                                         </CenteredP>
@@ -124,7 +124,6 @@ const StoryPage = (props) => (
                             </Grid>
                     </>}
                 />
-        </Panel>
     </Container>
 </Layout>
 );

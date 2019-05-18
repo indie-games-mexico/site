@@ -67,12 +67,12 @@ const Layout = ({ children, location, i18nMessages }) => {
              <ApplicationContext.Consumer>
              { theme => (
                <>
-               <Header langs={langsMenu} homeLink={logoLink} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks} mainMenuLinks={data.site.siteMetadata.mainMenuLinks} theme={theme}/>
-                 <div>
-                   {children}
-                 </div>
-                 <Joystick width={50} height={50} />
-                 <Footer i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks}></Footer>
+                  <Header langs={langsMenu} homeLink={logoLink} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks} mainMenuLinks={data.site.siteMetadata.mainMenuLinks} theme={theme}/>
+                  <div style={{ minHeight: 'calc(100vh - 161px)' }}>
+                      {children}
+                  </div>
+                  <Joystick width={50} height={50} />
+                  <Footer i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks}></Footer>
                </>
              )}
              </ApplicationContext.Consumer>
