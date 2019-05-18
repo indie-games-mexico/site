@@ -1,6 +1,6 @@
 module.exports = [
   {
-    link: '#', // should be replaced by something like {lang}/my-custom-url
+    link: 'menu.ourstory.link', // should be replaced by something like {lang}/my-custom-url
     langKey: 'menu.ourstory',
     altKey: '',
   },

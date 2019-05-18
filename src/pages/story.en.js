@@ -59,7 +59,7 @@ const StoryPage = (props) => (
                                 <Row>
                                     <Col lg={12}>
                                         <CenteredP>
-                                            The ambitious idea of creating something (Indie Games Mexico) was conceived in december 2015 by Esther Lozano, Juan Ibarra and Miguel 
+                                            The ambitious idea of creating something (Indie Games Mexico) was conceived in december 2015 by Esther Lozano, Juan Ibarra and Miguel Velez
                                             who share a background in computer science and a passion for video games. 
                                             It all started as a desire to have an enthusiastic community and space in the region for video game development where people can share ideas, participate in projects and learn from each other. 
                                         </CenteredP>

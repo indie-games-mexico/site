@@ -103,7 +103,7 @@ const MobileMediaLink = ({icon, link, description, langKey, i18nMessages}) => (
 
 export const MainMenu = ({ i18nMessages, mainMenuLinks }) => {
   const [ isMenuOpen, setMenuOpen  ] = useState(false);
-  const links = mainMenuLinks.map(option => <Li key={option.langKey}><A href="#">{ i18nMessages[option.langKey] }</A></Li>);
+  const links = mainMenuLinks.map(option => <Li key={option.langKey}><A href={ i18nMessages[option.link] }>{ i18nMessages[option.langKey] }</A></Li>);
   const mobileLinks = mainMenuLinks.map((link, index) => <MobileMediaLink key={index} {...link} i18nMessages={i18nMessages}></MobileMediaLink>);
   return (
     <>

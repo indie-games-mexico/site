@@ -54,12 +54,12 @@ const StoryPage = (props) => (
                                     }
                             `}
                     render={data => <>
-                        <H1>Story</H1>
+                        <H1>Historia</H1>
                             <Grid>
                                 <Row>
                                     <Col lg={12}>
                                         <CenteredP>
-                                        La ambiciosa idea de crear algo (Indie Games México) fue concebida en diciembre de 2015 por Esther Lozano, Juan Ibarra y Miguel, quienes comparten una formación en informática y una pasión por los videojuegos. Todo comenzó como un deseo de tener una comunidad y espacio entusiastas en la región para el desarrollo de videojuegos donde las personas puedan compartir ideas, participar en proyectos y aprender unos de otros.
+                                        La ambiciosa idea de crear algo (Indie Games México) fue concebida en diciembre de 2015 por Esther Lozano, Juan Ibarra y Miguel Velez, quienes comparten una formación en informática y una pasión por los videojuegos. Todo comenzó como un deseo de tener una comunidad y espacio entusiastas en la región para el desarrollo de videojuegos donde las personas puedan compartir ideas, participar en proyectos y aprender unos de otros.
                                         </CenteredP>
                                     </Col>
                                 </Row>

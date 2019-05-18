@@ -2,6 +2,7 @@ module.exports = {
   'title': 'Indie Games Mexico',
   'blog': 'Blog',
   'menu.ourstory': 'Our Story',
+  'menu.ourstory.link': '/en/story',
   'menu.games': 'Games',
   'menu.studios': 'Studios',
   'menu.careers': 'Careers',

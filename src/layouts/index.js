@@ -44,11 +44,13 @@ const Layout = ({ children, location, i18nMessages }) => {
         }
       `}
       render={data => {
+       
         const url = location.pathname;
         const { langs, defaultLangKey } = data.site.siteMetadata.languages;
         const langKey = getCurrentLangKey(langs, defaultLangKey, url);
         const homeLink = `/${langKey}`.replace(`/${defaultLangKey}/`, '/');
         const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, '/') }));
+        const logoLink = `/${i18nMessages.locale}/`
         return (
           <IntlProvider
             locale={langKey}
@@ -65,7 +67,7 @@ const Layout = ({ children, location, i18nMessages }) => {
              <ApplicationContext.Consumer>
              { theme => (
                <>
-               <Header langs={langsMenu} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks} mainMenuLinks={data.site.siteMetadata.mainMenuLinks} theme={theme}/>
+               <Header langs={langsMenu} homeLink={logoLink} i18nMessages={i18nMessages} socialMediaLinks={data.site.siteMetadata.socialMediaLinks} mainMenuLinks={data.site.siteMetadata.mainMenuLinks} theme={theme}/>
                  <div>
                    {children}
                  </div>

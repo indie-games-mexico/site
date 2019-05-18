@@ -43,12 +43,14 @@ const LanguageChooserWrapper = styled.div`
 `;
 
 
-const Header = ({ langs, i18nMessages, socialMediaLinks, menuHoverDescriptionStyle, mainMenuLinks, theme }) =>  {
+const Header = ({ langs, i18nMessages, homeLink, socialMediaLinks, menuHoverDescriptionStyle, mainMenuLinks, theme }) =>  {
     return (
       <StyledHeader>
         <BrandWrapper>
         <BrandLogoWrapper>
-          <BrandLogo />
+          <a href={`${homeLink}`}>
+            <BrandLogo />
+          </a>
         </BrandLogoWrapper>
         </BrandWrapper>
         <MainMenuWrapper>
