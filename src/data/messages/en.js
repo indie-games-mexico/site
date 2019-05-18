@@ -5,6 +5,7 @@ module.exports = {
   'menu.ourstory.link': '/en/story',
   'menu.games': 'Games',
   'menu.studios': 'Studios',
+  'menu.studios.link': '/en/studios',
   'menu.careers': 'Careers',
   'menu.internship': 'Internship',
   'menu.community': 'Community',

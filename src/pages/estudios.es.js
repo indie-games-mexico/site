@@ -1,8 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { Panel } from '../components/common/panel';
 import { Container } from '../components/common/container';
-import { H1, H2, Strong, CenteredP, A, JustifiedP } from '../components/common/elements';
+import { JustifiedP } from '../components/common/elements';
 import { Banner } from '../components/common/banner';
 
 
