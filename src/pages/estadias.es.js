@@ -8,7 +8,7 @@ import Layout from '../layouts/es';
 
 const IntershipsPage = (props) => (
     <Layout location={props.location}>
-        <Banner src="internships" title="Interships"></Banner>
+        <Banner src="internships" title="Estadias"></Banner>
         <Container>
                 <Grid>
                     <Row>
