@@ -8,6 +8,7 @@ module.exports = {
   'menu.studios.link': '/en/studios',
   'menu.careers': 'Careers',
   'menu.internship': 'Internship',
+  'menu.intership.link': '/en/interships',
   'menu.community': 'Community',
   'menu.news': 'News',
   'language': 'Choose Language',

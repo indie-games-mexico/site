@@ -29,6 +29,13 @@ export const Banner = ({ src, title }) => (
     <StaticQuery
             query={graphql`
             query {
+              internships: file(relativePath: { eq: "banners/internships.jpg" }) {
+                childImageSharp {
+                  fluid(maxWidth: 1024) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
                 studios: file(relativePath: { eq: "banners/studios.jpg" }) {
                   childImageSharp {
                     fluid(maxWidth: 1024) {

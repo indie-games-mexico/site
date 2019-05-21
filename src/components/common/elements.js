@@ -27,6 +27,11 @@ export const P = styled.p`
   font-family: 'Rajdhani', sans-serif;
 `;
 
+export const NonStyleUl = styled.ul`
+    font-family: 'Rajdhani', sans-serif;
+    list-style-type: none;
+`;
+
 export const JustifiedP = ({ children }) => (
   <P style={{ textAlign: 'justify' }}>
     { children }

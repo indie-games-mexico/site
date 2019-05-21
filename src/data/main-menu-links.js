@@ -20,7 +20,7 @@ module.exports = [
     altKey: '',
   },
   {
-    link: '#', // should be replaced by something like {lang}/my-custom-url
+    link: 'menu.intership.link', // should be replaced by something like {lang}/my-custom-url
     langKey: 'menu.internship',
     altKey: '',
   },
