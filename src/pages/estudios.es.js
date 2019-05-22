@@ -5,7 +5,7 @@ import { JustifiedP } from '../components/common/elements';
 import { Banner } from '../components/common/banner';
 
 
-import Layout from '../layouts/en';
+import Layout from '../layouts/es';
 
 const StudioPage = (props) => (
     <Layout location={props.location}>
