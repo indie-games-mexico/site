@@ -23,7 +23,7 @@ const NotFoundPage = (props) => (
 		<Grid>
 			<Row>
 				<Col md={12}>
-					<JustifiedP>Pareces perdido, Intenta acceder alguno de los links del menu principal</JustifiedP>
+					<JustifiedP>Pareces perdido, Intenta acceder alguno de los links del menu principal.</JustifiedP>
 				</Col>
 			</Row>
 			<Row>
