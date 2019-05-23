@@ -10,6 +10,7 @@ module.exports = {
   'menu.internship': 'Estadias',
   'menu.intership.link': '/es/estadias',
   'menu.community': 'Comunidad',
+  'menu.community.link': '/es/comunidad',
   'menu.news': 'Noticias',
   'language': 'Seleccione Lenguage',
   'localeName': 'Español MX',

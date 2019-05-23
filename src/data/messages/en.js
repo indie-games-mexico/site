@@ -9,6 +9,7 @@ module.exports = {
   'menu.careers': 'Careers',
   'menu.internship': 'Internship',
   'menu.intership.link': '/en/interships',
+  'menu.community.link': '/en/community',
   'menu.community': 'Community',
   'menu.news': 'News',
   'language': 'Choose Language',

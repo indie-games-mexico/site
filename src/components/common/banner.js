@@ -50,6 +50,13 @@ export const Banner = ({ src, title }) => (
                       }
                     }
                   }
+                  community: file(relativePath: { eq: "banners/community.jpg" }) {
+                    childImageSharp {
+                      fluid(maxWidth: 1024) {
+                        ...GatsbyImageSharpFluid  
+                      }
+                    }
+                  }
               }
             `}
             render={data => (
