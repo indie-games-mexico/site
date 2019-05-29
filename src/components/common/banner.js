@@ -11,6 +11,11 @@ const Wrapper = styled.div`
     background-color: #000;
 `;
 
+const EmpyBackground = styled.div`
+  width: 100%;
+  height: 300px;
+`
+
 
 const BannerTitle = styled.h1`
     color: #fff;
@@ -57,6 +62,13 @@ export const Banner = ({ src, title }) => (
                       }
                     }
                   }
+                  games: file(relativePath: { eq: "banners/games.jpg" }) {
+                    childImageSharp {
+                      fluid(maxWidth: 1024) {
+                        ...GatsbyImageSharpFluid  
+                      }
+                    }
+                  }
               }
             `}
             render={data => (
@@ -74,4 +86,17 @@ export const Banner = ({ src, title }) => (
         >
 
     </StaticQuery>
+);
+
+export const TitleBanner = ({title}) => (
+                <Wrapper>
+                    <Grid style={ {backgroundColor: '#000'} }>
+                        <Row>
+                            <Col lg={12} style={{ position: 'relative' }}>
+                                <EmpyBackground></EmpyBackground>
+                                <BannerTitle>{title}</BannerTitle>
+                            </Col>
+                        </Row>
+                    </Grid>
+                </Wrapper>
 );
