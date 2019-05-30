@@ -4,6 +4,7 @@ module.exports = {
   'menu.ourstory': 'Historia',
   'menu.ourstory.link': '/es/historia',
   'menu.games': 'Juegos',
+  'menu.games.link': '/es/juegos',
   'menu.studios': 'Estudios',
   'menu.studios.link': '/es/estudios',
   'menu.careers': 'Carreras',

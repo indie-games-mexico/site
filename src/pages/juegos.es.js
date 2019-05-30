@@ -10,7 +10,7 @@ import Layout from "../layouts/en";
 
 const GamesPage = (props) => (
     <Layout location={props.location}>
-        <Banner src="games" title="Games"></Banner>
+        <Banner src="games" title="Juegos"></Banner>
         <StaticQuery
                         query={graphql`
                         query {
@@ -35,9 +35,9 @@ const GamesPage = (props) => (
                                     <Col lg={8}>
                                        <H2 style={{ textAlign: 'left' }}>Field Rivals</H2>
                                         <JustifiedP>
-                                            Strategic card based Soccer Game with interactive maps and characters. The game introduces an innovative gaming experience by giving each team and characters different sets of skills based on stage and current playing cards. Each team has their own stage, music and personality.   
+                                        Juego de fútbol basado en tarjetas estratégicas con mapas y personajes interactivos. El juego presenta una experiencia de juego innovadora al otorgar a cada equipo y personajes diferentes conjuntos de habilidades basadas en el escenario y las cartas actuales. Cada equipo tiene su propio escenario, música y personalidad.
                                         </JustifiedP>
-                                        <A href="#" style={{ float: 'left' }}>Find out more</A>
+                                        <A href="#" style={{ float: 'left' }}>Mas detalles</A>
                                     </Col>
                                 </Row>
                             </Grid>
