@@ -12,10 +12,10 @@ import { Container } from '../components/common/container';
 import { H2, P, JustifiedP, A } from '../components/common/elements';
 
 const MainPanel = styled.div`
-  transform: translateY(-100px);
+  transform: translateY(-60px);
   transition: all .4s ease-in;
   @media (max-width: 800px) {
-    transform: translateY(-40px);
+    transform: translateY(0px);
   }
 `;
 const CenteredParagraph = styled.div`

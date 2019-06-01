@@ -13,6 +13,10 @@ export const H3 = styled.h3`
   font-family: 'ZCOOL QingKe HuangYou', cursive;
 `;
 
+export const H4 = styled.h4`
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+`;
+
 export const A = styled.a`
   font-family: 'ZCOOL QingKe HuangYou', cursive;
   text-decoration: none;
@@ -51,3 +55,11 @@ export const CenteredP = ({ children }) => (
     { children }
   </P>
 )
+
+export const MainPanel = styled.div`
+transform: translateY(-60px);
+transition: all .4s ease-in;
+@media (max-width: 800px) {
+  transform: translateY(0px);
+}
+`;
