@@ -6,7 +6,7 @@ import { Panel } from '../../components/common/panel';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../../components/common/container';
 import { JustifiedP, CenteredP, MainPanel, H1, H2, H3, H4 } from '../../components/common/elements';
-import Layout from '../../layouts/en';
+import Layout from '../../layouts/es';
 
 const ImageWrapper = styled.div`
     @media (max-width: 800px) {
@@ -74,13 +74,13 @@ const FieldRivalsPage = (props) => (
                         <Grid>
                             <Row>
                                 <Col lg={12}>
-                                    <H3 style={{ textAlign: 'left' }}>Summary</H3>
+                                    <H3 style={{ textAlign: 'left' }}>Resumen</H3>
                                     <JustifiedP>
-                                        Strategic card based Soccer Game with interactive maps and characters. The game introduces an innovative gaming experience by giving each team and characters different sets of skills based on stage and current playing cards. Each team has their own stage, music and personality.
+                                        Juego de fútbol basado en tarjetas estratégicas con mapas y personajes interactivos. El juego presenta una experiencia de juego innovadora al otorgar a cada equipo y personajes diferentes conjuntos de habilidades basadas en el escenario y las cartas actuales. Cada equipo tiene su propio escenario, música y personalidad.
                                     </JustifiedP>
-                                    <H3 style={{ textAlign: 'left' }}>Game Play</H3>
+                                    <H3 style={{ textAlign: 'left' }}>Modo de Juego</H3>
                                     <JustifiedP>
-                                    The game consists of a number of rounds and cards randomly picked or provided. Using these cards you will try to outperform your opponent by strategically combining them. You would think that to win you will always pick the strongest card but, each card has a different effect based on team, stage and character. So to truly win the game you need to know your opponents team strengths and weaknesses and have a good strategy based on what you know and the stage where the game takes place.
+                                        El juego consiste en una serie de rondas y cartas elegidas al azar o proporcionadas. Usando estas cartas, intentarás superar a tu oponente al combinarlas estratégicamente. Pensarías que para ganar siempre elegirás la carta más fuerte, pero cada carta tiene un efecto diferente en función del equipo, el escenario y el personaje. Así que para ganar realmente el juego, debes conocer las fortalezas y debilidades del equipo de tus oponentes y tener una buena estrategia basada en lo que sabes y la etapa en la que se desarrolla el juego.
                                     </JustifiedP>
                                 </Col>
                             </Row>
@@ -91,23 +91,23 @@ const FieldRivalsPage = (props) => (
                             </Row>
                             <Row>
                                 <Col lg={12}>
-                                    <H3>Game Cards</H3>
+                                    <H3>Tipos de tarjetas del juego</H3>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col lg={6}>
-                                    <H4>Primary Cards</H4>
+                                    <H4>Tarjetas Primarias</H4>
                                     <JustifiedP>
-                                    These type of cards can also be referred as action cards. They indicate the action you intent to perform on your opponent. Some examples are shoot to score, defend, cancel your opponents move and counter attack. 
+                                        Este tipo de tarjetas también pueden ser referidas como tarjetas de acción. Indican la acción que intentas realizar sobre tu oponente. Algunos ejemplos son disparar para anotar, defender, cancelar el movimiento de tus oponentes y contraatacar.
                                     </JustifiedP>
                                 </Col>
                                 <Col lg={6}>
-                                    <H4>Secondary Cards</H4>
+                                    <H4>Tarjetas Secundarias</H4>
                                     <JustifiedP>
-                                    These are a set of extra cards that will change the game dramatically depending on the player skills to combine them with the primary cards. There are two types of cards, before game cards and during game cards called BGC and DGC respectively
+                                        Estos son un conjunto de tarjetas adicionales que cambiarán el juego dramáticamente dependiendo de las habilidades del jugador para combinarlas con las cartas principales. Hay dos tipos de tarjetas; pre-juego y durante-juego llamadas BGC y DGC respectivamente por su abreviación en inglés before game card y during game card. 
                                     </JustifiedP>
                                     <JustifiedP>
-                                    BGC are revealed once the match starts while DGC cards can be used at the players discretion and surprise the opponent with an unexpected attack. 
+                                        Los BGC se revelan una vez que comienza el partido, mientras que las cartas DGC pueden usarse a discreción de los jugadores y sorprender al oponente con un ataque inesperado.
                                     </JustifiedP>
                                 </Col>
                             </Row>
@@ -126,11 +126,9 @@ const FieldRivalsPage = (props) => (
                             </Row>
                             <Row>
                                 <Col lg={12}>
-                                    <H2>Characters and Teams</H2>
+                                    <H2>Personajes y Equipos</H2>
                                     <JustifiedP>
-                                        To make the game dynamic we decided to include 8 teams and a wide variety of characters with different set of skills and personalities. 
-                                        These traits enhance or hinder the cards used during game play.
-                                        Each Team has its own captain, logo, stage and music.
+                                        Para hacer el juego más dinámico, decidimos incluir 8 equipos con personajes de habilidades diferentes y cada uno tiene su propia personalidad. Estas características influyen en el efecto de las tarjetas utilizadas por el jugador. Cada equipo tiene su propio capitán, logotipo, escenario y música.
                                     </JustifiedP>
                                 </Col>
                             </Row>
@@ -154,9 +152,9 @@ const FieldRivalsPage = (props) => (
                             </Row>
                             <Row>
                                 <Col lg={12}>
-                                    <H3>And Much More</H3>
+                                    <H3>Hay mucho mas</H3>
                                     <CenteredP>
-                                        Stay tuned as the game develops we will reveal more information. Don't forget to follow us on social media as we are a very active community and we are constantly revealing new information. 
+                                        Visitanos con frecuencia para conocer lo último en el desarrollo del juego y no olvides seguirnos en las redes sociales.
                                     </CenteredP>
                                 </Col>
                             </Row>
