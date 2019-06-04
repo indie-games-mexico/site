@@ -27,17 +27,17 @@ const GamesPage = (props) => (
                         <Container>
                             <Grid>
                                 <Row>
-                                    <Col lg={4}>
-                                        <a href="field-rivals">
-                                            <Img fluid={data.fieldrivals.childImageSharp.fluid} />
-                                        </a>
-                                    </Col>
                                     <Col lg={8}>
                                        <H2 style={{ textAlign: 'left' }}>Field Rivals</H2>
                                         <JustifiedP>
                                         Juego de fútbol basado en tarjetas estratégicas con mapas y personajes interactivos. El juego presenta una experiencia de juego innovadora al otorgar a cada equipo y personajes diferentes conjuntos de habilidades basadas en el escenario y las cartas actuales. Cada equipo tiene su propio escenario, música y personalidad.
                                         </JustifiedP>
                                         <A href="field-rivals" style={{ float: 'left' }}>Mas detalles</A>
+                                    </Col>
+                                    <Col lg={4}>
+                                        <a href="field-rivals">
+                                            <Img fluid={data.fieldrivals.childImageSharp.fluid} />
+                                        </a>
                                     </Col>
                                 </Row>
                             </Grid>
