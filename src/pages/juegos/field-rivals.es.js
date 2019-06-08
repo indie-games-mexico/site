@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 import { Panel } from '../../components/common/panel';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../../components/common/container';
-import { JustifiedP, CenteredP, MainPanel, H1, H2, H3, H4 } from '../../components/common/elements';
+import { JustifiedP, CenteredP, MainPanel, H1, H2, H3, H4, A } from '../../components/common/elements';
 import Layout from '../../layouts/es';
 
 const ImageWrapper = styled.div`
@@ -77,6 +77,7 @@ const FieldRivalsPage = (props) => (
                                     <H3 style={{ textAlign: 'left' }}>Resumen</H3>
                                     <JustifiedP>
                                         Juego de fútbol basado en tarjetas estratégicas con mapas y personajes interactivos. El juego presenta una experiencia de juego innovadora al otorgar a cada equipo y personajes diferentes conjuntos de habilidades basadas en el escenario y las cartas actuales. Cada equipo tiene su propio escenario, música y personalidad.
+                                        <br/> Vista las <A href="fact-sheet">Características (Fact Sheet)</A>
                                     </JustifiedP>
                                     <H3 style={{ textAlign: 'left' }}>Modo de Juego</H3>
                                     <JustifiedP>

@@ -47,101 +47,101 @@ const FactSheet = (props) => (
           console.log('Images', data);
           return (
             <>
-                <Banner src="factsheet" title="Fact Sheet"></Banner>
+                <Banner src="factsheet" title="Características"></Banner>
                 <Grid>
                     <Row>
                         <Col lg={12}>&nbsp;</Col>
                     </Row>
                     <Row>
                         <Col lg={3}>
-                            <H3>Facts</H3>
+                            <H3>Datos</H3>
                             <ResponsiveUL>
                                 <li>
                                     <StrongBlock>
-                                        Developer
+                                        Desarrollador
                                     </StrongBlock>
                                     Indie Games Mexico <br/>
-                                    Based in Mexico B.C
+                                    Basado en Mexico B.C
                                 </li>
                                 <li>
                                     <StrongBlock>
-                                        Release Date
+                                       Fecha de Lanzamiento
                                     </StrongBlock>
                                     Late 2019
                                 </li>
                                 <li>
                                     <StrongBlock>
-                                        Platforms
+                                        Plataformas
                                     </StrongBlock>
                                     PC
                                 </li>
                                 <li>
                                     <StrongBlock>
-                                        WebSite
+                                        Sitio Web
                                     </StrongBlock>
                                         <A href="https://indiegamesmexico.com">indiegamesmexico.com</A>
                                 </li>
                                 <li>
                                     <StrongBlock>
-                                        Price
+                                        Precio
                                     </StrongBlock>
-                                    TBD
+                                    Por anunciar
                                 </li>
                                 <li>
                                     <StrongBlock>
-                                        Screenshots
+                                    Capturas de pantalla
                                     </StrongBlock>
                                 </li>
                                 <li>
-                                    <Img fluid={data.card1.childImageSharp.fluid} alt="screenshot"/>
+                                    <Img fluid={data.card1.childImageSharp.fluid} alt="Captura de pantalla"/>
                                 </li>
                                 <li>
-                                    <Img fluid={data.card2.childImageSharp.fluid} alt="screenshot"/>
+                                    <Img fluid={data.card2.childImageSharp.fluid} alt="Captura de pantalla"/>
                                 </li>
                                 <li>
-                                    <Img fluid={data.card3.childImageSharp.fluid} alt="screenshot"/>
+                                    <Img fluid={data.card3.childImageSharp.fluid} alt="Captura de pantalla"/>
                                 </li>
                             </ResponsiveUL>
                         </Col>
                         <Col lg={9}>
-                            <H3>Description</H3>
+                            <H3>Descripción</H3>
                             <JustifiedP>
-                            Field Rivals its a soccer video game based on cards and strategy.   The objective remains the same, score goals to defeat the opponent . Not like other soccer games, winning the game requires more than soccer abilities. It requires the right strategy based on teams and dealt cards. 
+                                Field Rivals es un videojuego de tarjetas con temáticas de futbol soccer en campos abiertos. El objetivo principal es, como el deporte, derrotar al contrincante teniendo más goles que éste creando tus propias estrategias. 
                             </JustifiedP>
-                            <H3>Story</H3>
+                            <H3>Historia</H3>
                             <JustifiedP>
-                            Each team has its own unique story and purpose for winning the championship. Somewhere down the road teams will face their antagonist rival.
+                                Cada equipo cuenta con una historia, por lo que al final para lograr el trofeo de campeonato deberás enfrentarte a tu rival antagonista.
                             </JustifiedP>
-                            <H3>Features</H3>
+                            <H3>Características</H3>
                             <Ul>
                                 <li>
                                     <JustifiedP>
-                                        The game is based mainly with 7 cards: Shoot, Defend, Pass, Counter, Goalkeeper, Stand and Super Shoot. All these have advantages and disadvantages to each other. Each movement between two rival cards (one play) can end with a different result, either scoring a goal, stopping a goal, blocking a play, among others.
+                                        El juego se basa principalmente con 7 tarjetas: Shoot, Defend, Pass, Counter, Goalkeeper, Stand y Super Shoot. Todos éstos tienen ventajas y desventajas entre sí. Cada movimiento entre dos tarjetas rivales (una jugada) puede terminar con un resultado diferente, ya sea anotar un gol, detener un gol, bloquear una jugada, entre otros.
                                     </JustifiedP>
                                 </li>
                                 <li>
                                     <JustifiedP>
-                                        It has tactical cards, these can be used before or after a play to add a secondary result and try to have the advantage over your opponent.
+                                        Se cuenta con tarjetas tácticas, éstos se pueden usar antes o después de una jugada para agregar un resultado secundario e intentar tener la ventaja sobre tu rival.
                                     </JustifiedP>
                                 </li>
                                 <li>
                                     <JustifiedP>
-                                        Each team has different characteristics, some can be more offensive, others can be defensive.
+                                        Cada equipo cuenta con características diferentes, algunos pueden ser mas ofensivos, otros pueden ser defensivos.
                                     </JustifiedP>
                                 </li>
                                 <li>
                                     <JustifiedP>
-                                        All teams have a captain, different characteristics and motives to win. Each captain has its own antagonistic rival.
+                                        Todos los equipos cuentan con un capitán, los cuales tienen características distintas, y cada uno tiene su propio rival antagónico.
                                     </JustifiedP>
                                 </li>
                             </Ul>
-                            <H3>Awards & Recognitions</H3>
+                            <H3>Premios & Reconocimientos</H3>
                             <Ul>
                                 <li>
-                                Best Game" - GAMACON, May, 2018
+                                "Mejor Juego" - GAMACON, Mayo, 2018
                                 </li>
                                 <li>
-                                Trailer presentation on panel Latinx in  PAX West Seattle Washington.
+                                Presentación  del Trailer en el panel Latinx en PAX West Seattle Washigton 
                                 </li>
                             </Ul>
                         </Col>

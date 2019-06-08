@@ -32,12 +32,23 @@ const GamesPage = (props) => (
                                         <JustifiedP>
                                             Strategic card based Soccer Game with interactive maps and characters. The game introduces an innovative gaming experience by giving each team and characters different sets of skills based on stage and current playing cards. Each team has their own stage, music and personality.   
                                         </JustifiedP>
-                                        <A href="field-rivals" style={{ float: 'left' }}>Find out more</A>
+                                        <ul>
+                                            <li>
+                                                <A href="field-rivals" style={{ float: 'left' }}>Find out more</A>
+                                            </li>
+                                            <li>
+                                                <A href="field-rivals/fact-sheet" style={{ float: 'left' }}>Fact Sheet</A>
+                                            </li>
+                                        </ul>
                                     </Col>
                                     <Col lg={4}>
-                                        <a href="field-rivals">
-                                            <Img fluid={data.fieldrivals.childImageSharp.fluid} />
-                                        </a>
+                                        
+                                                <a href="field-rivals">
+                                                    <Img fluid={data.fieldrivals.childImageSharp.fluid} />
+                                                </a>
+                                           
+                              
+                                        
                                     </Col>
                                 </Row>
                             </Grid>

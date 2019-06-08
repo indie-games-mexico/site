@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 import { Panel } from '../../components/common/panel';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../../components/common/container';
-import { JustifiedP, CenteredP, MainPanel, H1, H2, H3, H4 } from '../../components/common/elements';
+import { JustifiedP, CenteredP, MainPanel, H1, H2, H3, H4, A } from '../../components/common/elements';
 import Layout from '../../layouts/en';
 
 const ImageWrapper = styled.div`
@@ -77,6 +77,7 @@ const FieldRivalsPage = (props) => (
                                     <H3 style={{ textAlign: 'left' }}>Summary</H3>
                                     <JustifiedP>
                                         Strategic card based Soccer Game with interactive maps and characters. The game introduces an innovative gaming experience by giving each team and characters different sets of skills based on stage and current playing cards. Each team has their own stage, music and personality.
+                                        <br/> Visit <A href="fact-sheet">Fact Sheet</A>
                                     </JustifiedP>
                                     <H3 style={{ textAlign: 'left' }}>Game Play</H3>
                                     <JustifiedP>
@@ -98,7 +99,7 @@ const FieldRivalsPage = (props) => (
                                 <Col lg={6}>
                                     <H4>Primary Cards</H4>
                                     <JustifiedP>
-                                    These type of cards can also be referred as action cards. They indicate the action you intent to perform on your opponent. Some examples are shoot to score, defend, cancel your opponents move and counter attack. 
+                                        These type of cards can also be referred as action cards. They indicate the action you intent to perform on your opponent. Some examples are shoot to score, defend, cancel your opponents move and counter attack. 
                                     </JustifiedP>
                                 </Col>
                                 <Col lg={6}>

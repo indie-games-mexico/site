@@ -32,7 +32,15 @@ const GamesPage = (props) => (
                                         <JustifiedP>
                                         Juego de fútbol basado en tarjetas estratégicas con mapas y personajes interactivos. El juego presenta una experiencia de juego innovadora al otorgar a cada equipo y personajes diferentes conjuntos de habilidades basadas en el escenario y las cartas actuales. Cada equipo tiene su propio escenario, música y personalidad.
                                         </JustifiedP>
-                                        <A href="field-rivals" style={{ float: 'left' }}>Mas detalles</A>
+                                        <ul>
+                                            <li>
+                                                <A href="field-rivals" style={{ float: 'left' }}>Mas detalles</A>
+                                            </li>
+                                            <li>
+                                                <A href="field-rivals/fact-sheet" style={{ float: 'left' }}>Características (fact sheet)</A>
+                                            </li>
+                                        </ul>
+                                        
                                     </Col>
                                     <Col lg={4}>
                                         <a href="field-rivals">
