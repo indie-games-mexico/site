@@ -40,9 +40,9 @@ const Hero = ({toggleMenuStyles}) => {
     <StaticQuery
       query={graphql`
         query {
-          placeholderImage: file(relativePath: { eq: "team.jpg" }) {
+          placeholderImage: file(relativePath: { eq: "hero.jpg" }) {
             childImageSharp {
-              fluid(maxWidth: 2040) {
+              fluid(maxWidth: 2040, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

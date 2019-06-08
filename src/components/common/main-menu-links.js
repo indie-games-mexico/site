@@ -39,7 +39,7 @@ const ULMobile = styled.ul`
   }
   ul {
     list-style-type: none;
-    padding: 0
+    padding: 0;
     margin: 0;
     text-align:left;
   }
@@ -95,16 +95,18 @@ const DarkA = styled.a`
   }
 `;
 
-const MobileMediaLink = ({icon, link, description, langKey, i18nMessages}) => (
-  <MobileLi>
-    <DarkA href={link} target="blank"><i className={icon}></i> {i18nMessages[langKey]} {description}</DarkA>
-  </MobileLi>
-)
-
+const MobileMediaLink = ({ link, title }) => {
+  // console.log({icon, link, description, langKey, title})
+  return (
+    <MobileLi>
+      <DarkA href={link} target="blank"> {title}</DarkA>
+    </MobileLi>
+  )
+}
 export const MainMenu = ({ i18nMessages, mainMenuLinks }) => {
   const [ isMenuOpen, setMenuOpen  ] = useState(false);
   const links = mainMenuLinks.map(option => <Li key={option.langKey}><A href={ i18nMessages[option.link] }>{ i18nMessages[option.langKey] }</A></Li>);
-  const mobileLinks = mainMenuLinks.map((link, index) => <MobileMediaLink key={index} {...link} i18nMessages={i18nMessages}></MobileMediaLink>);
+  const mobileLinks = mainMenuLinks.map(option => <MobileMediaLink key={option.langKey} link={i18nMessages[option.link]}  title={i18nMessages[option.langKey]}></MobileMediaLink>);
   return (
     <>
       <UlDesktop>

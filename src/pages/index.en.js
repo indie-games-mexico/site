@@ -9,15 +9,9 @@ import Layout from "../layouts/en";
 import Hero from '../components/common/hero';
 import { Panel } from '../components/common/panel';
 import { Container } from '../components/common/container';
-import { H2, P, JustifiedP, A } from '../components/common/elements';
+import { H2, P, JustifiedP, A, MainPanel } from '../components/common/elements';
 
-const MainPanel = styled.div`
-  transform: translateY(-100px);
-  transition: all .4s ease-in;
-  @media (max-width: 800px) {
-    transform: translateY(-40px);
-  }
-`;
+
 const CenteredParagraph = styled.div`
   max-width: 600px;
   margin: 0 auto;

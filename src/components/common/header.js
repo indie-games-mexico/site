@@ -20,14 +20,22 @@ const StyledHeader = styled.header`
 const BrandWrapper = styled.div`
   display:inline-block;
   width: 200px;
- text-align: center;
- padding: 10px;
+  text-align: center;
+  padding: 10px;
+  @media(max-width: 800px) {
+    width: unset;
+    padding: 15px 0 0 0;
+  }
 `;
 
 const BrandLogoWrapper = styled.div`
   width: 100px;
   display:inline-block;
   text-align: center;
+  @media(max-width: 800px) {
+    width: 80px;
+    padding: 8px 0 0 0;
+  }
 `;
 
 const MainMenuWrapper = styled.div`

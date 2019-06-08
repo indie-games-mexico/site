@@ -11,6 +11,11 @@ const Wrapper = styled.div`
     background-color: #000;
 `;
 
+const EmpyBackground = styled.div`
+  width: 100%;
+  height: 300px;
+`
+
 
 const BannerTitle = styled.h1`
     color: #fff;
@@ -31,22 +36,43 @@ export const Banner = ({ src, title }) => (
             query {
               internships: file(relativePath: { eq: "banners/internships.jpg" }) {
                 childImageSharp {
-                  fluid(maxWidth: 1024) {
+                  fluid(maxWidth: 1024, quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
                 studios: file(relativePath: { eq: "banners/studios.jpg" }) {
                   childImageSharp {
-                    fluid(maxWidth: 1024) {
+                    fluid(maxWidth: 1024, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
                 }
                 story: file(relativePath: { eq: "banners/story.jpg" }) {
                     childImageSharp {
-                      fluid(maxWidth: 1024) {
+                      fluid(maxWidth: 1024, quality: 100) {
                         ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                  community: file(relativePath: { eq: "banners/community.jpg" }) {
+                    childImageSharp {
+                      fluid(maxWidth: 1024, quality: 100) {
+                        ...GatsbyImageSharpFluid  
+                      }
+                    }
+                  }
+                  games: file(relativePath: { eq: "banners/games.jpg" }) {
+                    childImageSharp {
+                      fluid(maxWidth: 1024, quality: 100) {
+                        ...GatsbyImageSharpFluid  
+                      }
+                    }
+                  }
+                  factsheet: file(relativePath: { eq: "banners/factsheet.jpg" }) {
+                    childImageSharp {
+                      fluid(maxWidth: 2014, quality: 100) {
+                        ...GatsbyImageSharpFluid  
                       }
                     }
                   }
@@ -67,4 +93,17 @@ export const Banner = ({ src, title }) => (
         >
 
     </StaticQuery>
+);
+
+export const TitleBanner = ({title}) => (
+                <Wrapper>
+                    <Grid style={ {backgroundColor: '#000'} }>
+                        <Row>
+                            <Col lg={12} style={{ position: 'relative' }}>
+                                <EmpyBackground></EmpyBackground>
+                                <BannerTitle>{title}</BannerTitle>
+                            </Col>
+                        </Row>
+                    </Grid>
+                </Wrapper>
 );
