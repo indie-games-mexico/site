@@ -39,7 +39,7 @@ const ULMobile = styled.ul`
   }
   ul {
     list-style-type: none;
-    padding: 0
+    padding: 0;
     margin: 0;
     text-align:left;
   }
