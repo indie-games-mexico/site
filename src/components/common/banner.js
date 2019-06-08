@@ -36,35 +36,42 @@ export const Banner = ({ src, title }) => (
             query {
               internships: file(relativePath: { eq: "banners/internships.jpg" }) {
                 childImageSharp {
-                  fluid(maxWidth: 1024) {
+                  fluid(maxWidth: 1024, quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
                 studios: file(relativePath: { eq: "banners/studios.jpg" }) {
                   childImageSharp {
-                    fluid(maxWidth: 1024) {
+                    fluid(maxWidth: 1024, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
                 }
                 story: file(relativePath: { eq: "banners/story.jpg" }) {
                     childImageSharp {
-                      fluid(maxWidth: 1024) {
+                      fluid(maxWidth: 1024, quality: 100) {
                         ...GatsbyImageSharpFluid
                       }
                     }
                   }
                   community: file(relativePath: { eq: "banners/community.jpg" }) {
                     childImageSharp {
-                      fluid(maxWidth: 1024) {
+                      fluid(maxWidth: 1024, quality: 100) {
                         ...GatsbyImageSharpFluid  
                       }
                     }
                   }
                   games: file(relativePath: { eq: "banners/games.jpg" }) {
                     childImageSharp {
-                      fluid(maxWidth: 1024) {
+                      fluid(maxWidth: 1024, quality: 100) {
+                        ...GatsbyImageSharpFluid  
+                      }
+                    }
+                  }
+                  factsheet: file(relativePath: { eq: "banners/factsheet.jpg" }) {
+                    childImageSharp {
+                      fluid(maxWidth: 2014, quality: 100) {
                         ...GatsbyImageSharpFluid  
                       }
                     }

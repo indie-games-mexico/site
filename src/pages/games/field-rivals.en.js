@@ -23,42 +23,42 @@ const FieldRivalsPage = (props) => (
                 query {
                     fieldrivals: file(relativePath: { eq: "field-rivals-wide.jpg" }) {
                         childImageSharp {
-                            fluid(maxWidth: 2040) {
+                            fluid(maxWidth: 2040, quality: 100) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
                     }
                     gamecards1: file(relativePath: { eq: "game-cards-1.jpg" }) {
                         childImageSharp {
-                            fluid(maxWidth: 1200) {
+                            fluid(maxWidth: 1200, quality: 100) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
                     }
                     gamecards2: file(relativePath: { eq: "game-cards-2.jpg" }) {
                         childImageSharp {
-                            fluid(maxWidth: 1200) {
+                            fluid(maxWidth: 1200, quality: 100) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
                     }
                     characters1: file(relativePath: { eq: "characters-1.jpg" }) {
                         childImageSharp {
-                            fluid(maxWidth: 1200) {
+                            fluid(maxWidth: 1200, quality: 100) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
                     }
                     characters2: file(relativePath: { eq: "characters-2.jpg" }) {
                         childImageSharp {
-                            fluid(maxWidth: 1200) {
+                            fluid(maxWidth: 1200, quality: 100) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
                     }
                     characters3: file(relativePath: { eq: "characters-3.jpg" }) {
                         childImageSharp {
-                            fluid(maxWidth: 1200) {
+                            fluid(maxWidth: 1200, quality: 100) {
                                 ...GatsbyImageSharpFluid
                             }
                         }

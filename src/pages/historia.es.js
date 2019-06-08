@@ -18,35 +18,35 @@ const StoryPage = (props) => (
                                     query {
                                         square1: file(relativePath: { eq: "square-1.jpg" }) {
                                             childImageSharp {
-                                                fluid(maxWidth: 800) {
+                                                fluid(maxWidth: 800, quality: 100) {
                                                 ...GatsbyImageSharpFluid
                                                 }
                                             }
                                         }
                                         square2: file(relativePath: { eq: "square-2.jpg" }) {
                                             childImageSharp {
-                                                fluid(maxWidth: 800) {
+                                                fluid(maxWidth: 800, quality: 100) {
                                                 ...GatsbyImageSharpFluid
                                                 }
                                             }
                                         }
                                         square3: file(relativePath: { eq: "square-3.jpg" }) {
                                             childImageSharp {
-                                                fluid(maxWidth: 800) {
+                                                fluid(maxWidth: 800, quality: 100) {
                                                 ...GatsbyImageSharpFluid
                                                 }
                                             }
                                         }
                                         evolution: file(relativePath: { eq: "evolution-game.jpg" }) {
                                             childImageSharp {
-                                                fluid(maxWidth: 600) {
+                                                fluid(maxWidth: 600, quality: 100) {
                                                 ...GatsbyImageSharpFluid
                                                 }
                                             }
                                         }
                                         paperCards: file(relativePath: { eq: "legacy-cards.jpg" }) {
                                             childImageSharp {
-                                                fluid(maxWidth: 600) {
+                                                fluid(maxWidth: 600, quality: 100) {
                                                 ...GatsbyImageSharpFluid
                                                 }
                                             }

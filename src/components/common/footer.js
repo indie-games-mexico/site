@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { BrandLogo } from './brand-logo';
 
 const StyledFooter = styled.footer`
-  background-color: rgba(0, 0, 0, .8);
+  background-color: #000;
   color: #fff;
   height: 160px;
   font-family: 'Rajdhani',sans-serif;

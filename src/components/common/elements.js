@@ -31,6 +31,12 @@ export const Strong = styled.strong`
   font-weight: bold;
 `;
 
+export const StrongBlock = styled.strong`
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  font-weight: bold;
+  display: block;
+`;
+
 export const P = styled.p`
   font-family: 'Rajdhani', sans-serif;
 `;
@@ -42,6 +48,13 @@ export const Ul = styled.ul`
 export const NonStyleUl = styled.ul`
     font-family: 'Rajdhani', sans-serif;
     list-style-type: none;
+`;
+
+export const BlockUl = styled.ul`
+    font-family: 'Rajdhani', sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 `;
 
 export const JustifiedP = ({ children }) => (

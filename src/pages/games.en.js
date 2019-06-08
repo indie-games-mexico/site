@@ -16,7 +16,7 @@ const GamesPage = (props) => (
                         query {
                             fieldrivals: file(relativePath: { eq: "field-rivals.jpg" }) {
                             childImageSharp {
-                                fluid(maxWidth: 500) {
+                                fluid(maxWidth: 500, quality: 100) {
                                 ...GatsbyImageSharpFluid
                                 }
                             }
