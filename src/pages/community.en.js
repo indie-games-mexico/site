@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
-import { JustifiedP, A, H3, Ul } from '../components/common/elements';
+import { JustifiedP, A, H3, Ul, H2, TitleSpaceWrapper } from '../components/common/elements';
 import { Banner } from '../components/common/banner';
 
 import Layout from '../layouts/en';
@@ -13,6 +13,9 @@ const CommunityPage = (props) => (
             <Grid>
                 <Row>
                     <Col lg={12}>
+                        <TitleSpaceWrapper>
+                                    <H2 style={{ textAlign:'left' }}>Join us</H2>
+                        </TitleSpaceWrapper>
                         <JustifiedP>
                             Hello if you have reach this page you are probably interested in getting involved with people in the community. We are friendly kind human beings with passion for video games and we welcome people of all skills levels.
                             If your skills or talents fit in any of the following categories feel free to reach out, we want to talk to you.

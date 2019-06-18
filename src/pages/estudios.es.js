@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
-import { JustifiedP } from '../components/common/elements';
+import { JustifiedP, H2, TitleSpaceWrapper } from '../components/common/elements';
 import { Banner } from '../components/common/banner';
 
 
@@ -14,6 +14,9 @@ const StudioPage = (props) => (
                 <Grid>
                     <Row>
                         <Col lg={12}>
+                            <TitleSpaceWrapper>
+                                    <H2 style={{ textAlign:'left' }}>Nuestro Espacio Creativo</H2>
+                            </TitleSpaceWrapper>
                             <JustifiedP>
                                 Indie Games Studios está estratégicamente ubicado a solo unos minutos de la frontera con los EE. UU. Y muy cerca del centro de la ciudad. 
                                 para que las personas de la comunidad se reúnan regularmente. La ubicación ofrece múltiples ventajas, las personas en el área en su mayor parte son Bilingües y son capaces de viajar al extranjero.

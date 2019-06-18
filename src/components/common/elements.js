@@ -57,6 +57,18 @@ export const BlockUl = styled.ul`
     padding: 0;
 `;
 
+export const ImageWrapper = styled.div`
+    @media (max-width: 800px) {
+        margin-bottom:12px;
+    }
+`;
+
+export const TitleSpaceWrapper = styled.div`
+    @media (max-width: 800px) {
+      margin-top:15px;
+    }
+`;
+
 export const JustifiedP = ({ children }) => (
   <P style={{ textAlign: 'justify' }}>
     { children }

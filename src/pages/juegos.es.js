@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image";
 import { Banner } from '../components/common/banner';
 import { Container } from '../components/common/container';
-import { H2, A, JustifiedP } from '../components/common/elements';
+import { H2, A, JustifiedP, ImageWrapper } from '../components/common/elements';
 
 import Layout from "../layouts/en";
 
@@ -28,7 +28,7 @@ const GamesPage = (props) => (
                             <Grid>
                                 <Row>
                                     <Col lg={8}>
-                                       <H2 style={{ textAlign: 'left' }}>Field Rivals</H2>
+                                       <H2 style={{ textAlign: 'left', marginTop:'15px' }}>Field Rivals</H2>
                                         <JustifiedP>
                                         Juego de fútbol basado en tarjetas estratégicas con mapas y personajes interactivos. El juego presenta una experiencia de juego innovadora al otorgar a cada equipo y personajes diferentes conjuntos de habilidades basadas en el escenario y las cartas actuales. Cada equipo tiene su propio escenario, música y personalidad.
                                         </JustifiedP>
@@ -44,7 +44,9 @@ const GamesPage = (props) => (
                                     </Col>
                                     <Col lg={4}>
                                         <a href="field-rivals">
-                                            <Img fluid={data.fieldrivals.childImageSharp.fluid} />
+                                            <ImageWrapper>
+                                                <Img fluid={data.fieldrivals.childImageSharp.fluid} />
+                                            </ImageWrapper>
                                         </a>
                                     </Col>
                                 </Row>
