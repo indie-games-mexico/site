@@ -1,0 +1,4 @@
+# SEO Fix
+
+# Redirect default Netlify subdomain to primary domain
+https://indiegamesmexico.netlify.com/* https://indiegamesmexico.com/:splat 301!
