@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
-import { JustifiedP, NonStyleUl, Strong, A } from '../components/common/elements';
+import { JustifiedP, NonStyleUl, Strong, A, TitleSpaceWrapper, H2 } from '../components/common/elements';
 import { Banner } from '../components/common/banner';
 
 import Layout from '../layouts/es';
@@ -13,6 +13,9 @@ const IntershipsPage = (props) => (
                 <Grid>
                     <Row>
                         <Col lg={12}>
+                            <TitleSpaceWrapper>
+                                    <H2 style={{ textAlign:'left' }}>Crece con Nostros</H2>
+                            </TitleSpaceWrapper>
                             <JustifiedP>
                                 Indie Games México recluta gustosamente aspirantes para el desarrollo de video juegos con poca o nula experiencia.
                                 Si este eres tu? envianos CV actualizado y una carta de presentación en inglés y nos pondremos en contacto lo antes posible. Podemos ayudarte a hacer una carrera en cualquiera de los siguientes caminos: 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
-import { JustifiedP, NonStyleUl, Strong, A } from '../components/common/elements';
+import { JustifiedP, NonStyleUl, Strong, A, TitleSpaceWrapper, H2 } from '../components/common/elements';
 import { Banner } from '../components/common/banner';
 
 import Layout from '../layouts/en';
@@ -13,6 +13,9 @@ const IntershipsPage = (props) => (
                 <Grid>
                     <Row>
                         <Col lg={12}>
+                            <TitleSpaceWrapper>
+                                    <H2 style={{ textAlign:'left' }}>Grow with us</H2>
+                            </TitleSpaceWrapper>
                             <JustifiedP>
                                 Indie Games Mexico gladly recruits aspiring game developers with little to no knowledge.
                                 If this is you, send us your CV and your introduction letter in english and we will get back to you. We can mentor and help you grow your career in any of the following paths: 

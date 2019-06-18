@@ -1,19 +1,11 @@
 import React from 'react';
 import { StaticQuery, graphql } from "gatsby";
-import styled from 'styled-components';
 import Img from "gatsby-image";
 import { Panel } from '../../components/common/panel';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../../components/common/container';
-import { JustifiedP, CenteredP, MainPanel, H1, H2, H3, H4, A } from '../../components/common/elements';
+import { JustifiedP, CenteredP, MainPanel, H1, H2, H3, H4, A, ImageWrapper } from '../../components/common/elements';
 import Layout from '../../layouts/en';
-
-const ImageWrapper = styled.div`
-    @media (max-width: 800px) {
-        margin-bottom:12px;
-    }
-`;
-
 
 
 const FieldRivalsPage = (props) => (

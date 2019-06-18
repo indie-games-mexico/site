@@ -67,7 +67,7 @@ const FactSheet = (props) => (
                                     <StrongBlock>
                                        Fecha de Lanzamiento
                                     </StrongBlock>
-                                    Late 2019
+                                    Finales 2019
                                 </li>
                                 <li>
                                     <StrongBlock>
