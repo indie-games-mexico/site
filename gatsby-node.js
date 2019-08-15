@@ -1,10 +1,43 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions;
 
-// You can delete this file if you're not using it
+    const result = await graphql(`
+            {
+                allSanityPost {
+                totalCount
+                nodes {
+                    title
+                    slug
+                    locale {
+                        name
+                        code
+                    }
+                    mainImage {
+                        asset {
+                            url
+                        }
+                    }
+                    author {
+                        name
+                    }
+                    _rawBody
+                    
+                }
+                }
+            }
+    `);
 
-// multi locale example
-// https://github.com/hugomn/hugomagalhaes.com/tree/master/src/data
+    if (result.errors) {
+        throw result.errors
+    }
+
+    const pages = result.data.allSanityPost.nodes || [];
+    pages.forEach(page => {
+        const path = `blog/${page.locale.code}/${page.slug}`;
+        createPage({
+            path,
+            component: require.resolve('./src/templates/blog-entry.js'),
+            context:{ ...page }
+        });
+    });
+}
