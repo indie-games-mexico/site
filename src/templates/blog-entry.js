@@ -66,7 +66,7 @@ const blogTest = (props) => {
                                        <Strong>{ locale[props.pageContext.locale.code].messages.by }</Strong> { props.pageContext.author.name }
                                     </JustifiedP>
                                     <JustifiedP>
-                                        <Strong>Published:</Strong> { formatedDate(props.pageContext.publishedAt, props.pageContext.locale.code) }
+                                        <Strong>{ locale[props.pageContext.locale.code].messages.published }</Strong> { formatedDate(props.pageContext.publishedAt, props.pageContext.locale.code) }
                                     </JustifiedP>
                                 </Col>
                             </Row>
