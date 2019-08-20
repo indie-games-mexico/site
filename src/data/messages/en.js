@@ -23,5 +23,6 @@ module.exports = {
   'follow.us': 'Follow us',
   'subscribe.on': 'Subscribe',
   'find.us': 'Find us',
-  'footer.trademark': 'Indie Games México. Trademarks belong to Game Dev MX S de R.L. de C.V. All rights reserved.'
+  'footer.trademark': 'Indie Games México. Trademarks belong to Game Dev MX S de R.L. de C.V. All rights reserved.',
+  'by': 'by'
 };

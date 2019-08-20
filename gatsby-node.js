@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 nodes {
                     title
                     slug
+                    publishedAt
                     locale {
                         name
                         code

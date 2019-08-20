@@ -1,28 +1,35 @@
 // https://n8us2tsl.api.sanity.io/v1/graphql/production/default
 import React from 'react';
+import { format } from 'date-fns';
+import parse from 'date-fns/parse';
+import esLocale from 'date-fns/locale/es';
+import enLocale from 'date-fns/locale/en';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
-import { JustifiedP, H1, MainPanel } from '../components/common/elements';
+import { JustifiedP, H1, MainPanel, Strong } from '../components/common/elements';
 import { Panel } from '../components/common/panel';
 import Layout from '../layouts/en';
 import PortableText from "@sanity/block-content-to-react"
-import styled from 'styled-components';
+
 import Img from "gatsby-image"
 
-// left here figure out how to avoid to pass project id and dataset each time
+import enMessages from '../data/messages/en';
+import esMessages from '../data/messages/es';
 
-const Banner = styled.div`
-    width: 100%;
-    display: block;
-    text-align: center;
-    background-color: #000;
-`;
+const locale = {
+    en: {
+        messages: enMessages,
+        locale: enLocale,
+        format: 'dddd MMMM DD - YYYY'
+    },
+    es: {
+        messages: esMessages,
+        locale: esLocale,
+        format: 'DD dddd de MMMM del YYYY'
+    }
+}
 
-const BannerContainer = styled.div`
-    max-width: 1024px;
-    height: auto;
-    margin: 0 auto;
-`;
+
 
 const BannerRender = ({fluid}) => {
     if (fluid) {
@@ -34,10 +41,16 @@ const BannerRender = ({fluid}) => {
     return (<div style={{ width: '100%', height: 60 }}></div>);
 }
 
+const formatedDate = (dateString, localeCode) => {
+    const dateLocale = locale[localeCode];
+    const date = parse(dateString);
+    const result = format(date, dateLocale.format,  { locale: dateLocale.locale });
+    return result;
+}
+
 
 
 const blogTest = (props) => {
-    console.log(props)
     return (
     <Layout location={props.location}>
         <BannerRender fluid={((props.pageContext.mainImage || {}).asset || {}).fluid}></BannerRender>
@@ -50,8 +63,10 @@ const blogTest = (props) => {
                                 <Col lg={12}>
                                     <H1>{ props.pageContext.title }</H1>
                                     <JustifiedP>
-                                        by { props.pageContext.author.name }
-                                        
+                                       <Strong>{ locale[props.pageContext.locale.code].messages.by }</Strong> { props.pageContext.author.name }
+                                    </JustifiedP>
+                                    <JustifiedP>
+                                        <Strong>Published:</Strong> { formatedDate(props.pageContext.publishedAt, props.pageContext.locale.code) }
                                     </JustifiedP>
                                 </Col>
                             </Row>
@@ -60,7 +75,7 @@ const blogTest = (props) => {
                                     <PortableText
                                         projectId="n8us2tsl"
                                         dataset="production"
-                                        blocks={props.pageContext._rawBody }
+                                        blocks={ props.pageContext._rawBody }
                                         />
                                 </Col>
                             </Row>
