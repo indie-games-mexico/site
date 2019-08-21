@@ -1,4 +1,4 @@
-exports.createPages = async ({ graphql, actions }) => {
+const createPostPages = async (graphql, actions) => {
     const { createPage } = actions;
 
     const result = await graphql(`
@@ -50,3 +50,72 @@ exports.createPages = async ({ graphql, actions }) => {
         });
     });
 }
+
+const createBlogList = async(graphql, actions) => {
+    const { createPage } = actions;
+    const result = await graphql(`
+    query blogListQuery($skip: Int!, $limit: Int!) {
+        allSanityPost(skip: $skip, limit: $limit, sort: { fields:[_createdAt], order: DESC }) {
+            totalCount
+            nodes {
+            locale {
+                name
+                code
+            }
+            title
+            slug
+            publishedAt
+            author {
+                name
+            }
+            }
+        }
+        }
+    `);
+
+    /*
+        left here, implement pagination following this tutorial
+        https://nickymeuleman.netlify.com/blog/gatsby-pagination
+    */
+    const path = `blog-list/en/example`;
+        createPage({
+            path,
+            component: require.resolve('./src/templates/blog-list.js'),
+            context:{ ok: true }
+        });
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+    await createPostPages(graphql, actions);
+    await createBlogList(graphql, actions);
+}
+
+
+/*
+    TODO: 
+        - Make the graphql private and only connect using tokens and re generate id's 
+          https://n8us2tsl.api.sanity.io/v1/graphql/production/default
+        
+*/
+
+/*
+    Sanity posts query
+    query blogListQuery($skip: Int!, $limit: Int!) {
+    allSanityPost(skip: $skip, limit: $limit, sort: { fields:[_createdAt], order: DESC }) {
+        totalCount
+        nodes {
+        locale {
+            name
+            code
+        }
+        title
+        slug
+        publishedAt
+        author {
+            name
+        }
+        }
+    }
+    }
+
+*/

@@ -1,4 +1,3 @@
-// https://n8us2tsl.api.sanity.io/v1/graphql/production/default
 import React from 'react';
 import { format } from 'date-fns';
 import parse from 'date-fns/parse';
@@ -50,7 +49,7 @@ const formatedDate = (dateString, localeCode) => {
 
 
 
-const blogTest = (props) => {
+const PostPage = (props) => {
     return (
     <Layout location={props.location}>
         <BannerRender fluid={((props.pageContext.mainImage || {}).asset || {}).fluid}></BannerRender>
@@ -88,4 +87,4 @@ const blogTest = (props) => {
 );
     }
 
-export default blogTest;
+export default PostPage;
