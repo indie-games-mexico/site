@@ -1,3 +1,4 @@
+const localeKeys = require('./src/data/languages');
 const createPostPages = async (graphql, actions) => {
     const { createPage } = actions;
 
@@ -41,14 +42,56 @@ const createPostPages = async (graphql, actions) => {
     }
 
     const pages = result.data.allSanityPost.nodes || [];
+    const template = require.resolve('./src/templates/blog-entry.js');
     pages.forEach(page => {
-        const path = `blog/${page.locale.code}/${page.slug}`;
+        // can probably memoize to make it faster.
+        const urlProps = localeKeys.langs.find(l => l.locale === page.locale.code);
+        const path = `${page.locale.code}/${urlProps.dynamicUrl.url}/${page.slug}`;
         createPage({
             path,
-            component: require.resolve('./src/templates/blog-entry.js'),
-            context:{ ...page }
+            component: template,
+            context: { 
+                ...page 
+            }
         });
     });
+}
+
+const queryPostsListPerPage = async (graphql, skip, limit, locale) => {
+    const result = await graphql(`
+    query blogListQuery($skip: Int!, $limit: Int!, $locale: String!) {
+        allSanityPost
+                (
+              skip: $skip, 
+              limit: $limit, 
+              sort: {fields: [_createdAt], order: DESC}
+              filter: { 
+                locale: { 
+                  code: {
+                        eq: $locale
+                  } 
+                } 
+              }
+            ) 
+        {
+          totalCount
+          nodes {
+            locale {
+              name
+              code
+            }
+            title
+            slug
+            publishedAt
+            author {
+              name
+            }
+          }
+        }
+      }
+    `, { skip, limit, locale });
+
+    return result;
 }
 
 const createBlogList = async(graphql, actions) => {
@@ -93,96 +136,30 @@ const createBlogList = async(graphql, actions) => {
     }
 
     const postsPerPage = 2;
-    supportedLocales.forEach((locale, i) => {
+    supportedLocales.forEach(async (locale) => {
         // left here the index is incorrect.
-        const numPages = Math.ceil(locale.total / postsPerPage);
-        const path = i === 0 ? `blog/${locale.code}/index` : `blog/${locale.code}/index/${i + 1}`;
-        
-        createPage({
-          path,
-          component: require.resolve("./src/templates/blog-list.js"),
-          context: {  
-              limit: postsPerPage,      
-              skip: i * postsPerPage,      
-              numPages,      
-              currentPage: i + 1    
-            }  
-        });
+        const { total, code } = locale;
+        const urlProps = localeKeys.langs.find(l => l.locale === code);
+        const totalPages = Math.ceil(total / postsPerPage);
+        const path = `${code}/${urlProps.dynamicUrl.url}/`;
+
+        for (let pageNum = 0; pageNum < totalPages; pageNum++) {
+            const skip = pageNum * postsPerPage;
+            const blogEntries = await queryPostsListPerPage(graphql, skip, postsPerPage, code);
+            createPage({
+                path: `${path}${pageNum+1}`,
+                component: require.resolve('./src/templates/blog-list.js'),
+                context: { 
+                    blogEntries,
+                    locale: {
+                        code: urlProps.locale
+                    }
+                }
+            });
+        }
       });
     
-    /*
-    const totalPosts = await graphql(`
-        query {
-            allSanityPost
-                    (
-                filter: { 
-                    locale: { 
-                    code: {
-                            eq: "en"
-                        } 
-                    } 
-                }
-                ) 
-            {
-            totalCount
-            }
-        }
-    `);
-    
-
-
-
-
-
-    const result = await graphql(`
-    query blogListQuery {
-        allSanityPost(sort: { fields:[_createdAt], order: DESC }) {
-            totalCount
-            nodes {
-            locale {
-                name
-                code
-            }
-            title
-            slug
-            publishedAt
-            author {
-                name
-            }
-            }
-        }
-        }
-    `);
-
-    const postsPerPage = 2;
-    const enPosts = (result.data.allSanityPost.nodes || []).filter(page => page.locale.code === 'en');
-    const esPosts = (result.data.allSanityPost.nodes || []).filter(page => page.locale.code === 'es');
-
-    const totalEnPages = Math.ceil(enPosts.length / postsPerPage);
-    const totalEsPages = Math.ceil(esPosts.length / postsPerPage);
-
-    console.log('splitted arrays');
-    for(let p = 0; p < totalEnPages; p++) {
-        const posts = enPosts.slice(p * postsPerPage, postsPerPage);
-        const path = `blog/en/index${p === 0? '' : `/${p+1}`}`;
-        console.log('Created page', path);
-        createPage({
-            path,
-            component: require.resolve('./src/templates/blog-list.js'),
-            context: { posts }
-        })
-    }*/
-
-    /*
-        left here, implement pagination following this tutorial
-        https://nickymeuleman.netlify.com/blog/gatsby-pagination
-    */
-   /* const path = `blog-list/en/example`;
-        createPage({
-            path,
-            component: require.resolve('./src/templates/blog-list.js'),
-            context:{ ok: true }
-        });*/
+   
 }
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -198,37 +175,3 @@ exports.createPages = async ({ graphql, actions }) => {
         
 */
 
-/*
-    query blogListQuery($skip: Int!, $limit: Int!) {
-  allSanityPost
-  		(
-        skip: $skip, 
-        limit: $limit, 
-        sort: {fields: [_createdAt], order: DESC}
-        filter: { 
-          locale: { 
-            code: {
-          		eq: "en"
-        	} 
-          } 
-        }
-      ) 
-  {
-    totalCount
-    nodes {
-      locale {
-        name
-        code
-      }
-      title
-      slug
-      publishedAt
-      author {
-        name
-      }
-    }
-  }
-}
-
-
-*/

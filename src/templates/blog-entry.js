@@ -1,34 +1,12 @@
 import React from 'react';
-import { format } from 'date-fns';
-import parse from 'date-fns/parse';
-import esLocale from 'date-fns/locale/es';
-import enLocale from 'date-fns/locale/en';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
 import { JustifiedP, H1, MainPanel, Strong } from '../components/common/elements';
 import { Panel } from '../components/common/panel';
-import Layout from '../layouts/en';
-import PortableText from "@sanity/block-content-to-react"
-
+import PortableText from "@sanity/block-content-to-react";
 import Img from "gatsby-image"
 
-import enMessages from '../data/messages/en';
-import esMessages from '../data/messages/es';
-
-const locale = {
-    en: {
-        messages: enMessages,
-        locale: enLocale,
-        format: 'dddd MMMM DD - YYYY'
-    },
-    es: {
-        messages: esMessages,
-        locale: esLocale,
-        format: 'DD dddd de MMMM del YYYY'
-    }
-}
-
-
+import { locale, formatedDate } from './localized-settings';
 
 const BannerRender = ({fluid}) => {
     if (fluid) {
@@ -40,16 +18,9 @@ const BannerRender = ({fluid}) => {
     return (<div style={{ width: '100%', height: 60 }}></div>);
 }
 
-const formatedDate = (dateString, localeCode) => {
-    const dateLocale = locale[localeCode];
-    const date = parse(dateString);
-    const result = format(date, dateLocale.format,  { locale: dateLocale.locale });
-    return result;
-}
-
-
 
 const PostPage = (props) => {
+    const Layout = locale[props.pageContext.locale.code].layout
     return (
     <Layout location={props.location}>
         <BannerRender fluid={((props.pageContext.mainImage || {}).asset || {}).fluid}></BannerRender>
