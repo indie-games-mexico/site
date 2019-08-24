@@ -10,6 +10,7 @@ import { Panel } from '../components/common/panel';
 import Layout from '../layouts/en';
 
 const PostList = (props) => {
+    console.log(props.pageContext.posts);
     return (
         <Layout location={props.location}>
             <Container>
