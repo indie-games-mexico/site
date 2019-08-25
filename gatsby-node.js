@@ -139,7 +139,7 @@ const createBlogList = async(graphql, actions) => {
         })
     }
 
-    const postsPerPage = 2;
+    const postsPerPage = 10;
     supportedLocales.forEach(async (locale) => {
         // left here the index is incorrect.
         const { total, code } = locale;

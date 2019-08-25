@@ -5,15 +5,14 @@ import { Container } from '../components/common/container';
 import { MainPanel, H2, A, JustifiedP, Strong, GLink } from '../components/common/elements';
 import { Banner } from '../components/common/banner';
 import { Panel } from '../components/common/panel';
-//import Layout from '../layouts/en';
 
 import { locale, formatedDate } from './localized-settings';
 
-const newsRows = (blogEntries, localeCode) => 
+const newsRows = (blogEntries, localeCode, url) => 
     blogEntries.map(post => (
         <Row key={post.slug}>
             <Col lg={12}>
-                <H2><A href={post.slug}>{ post.title }</A></H2>
+                <H2><A href={`/${url}${post.slug}`}>{ post.title }</A></H2>
                 <JustifiedP>
                     <Strong>{ locale[localeCode].messages.by }</Strong> { post.author.name }, { formatedDate(post.publishedAt, post.locale.code) }
                 </JustifiedP>
@@ -30,10 +29,9 @@ const newsRows = (blogEntries, localeCode) =>
 
 
 const PostList = (props) => {
-    console.log('posts', props.pageContext.blogEntries);
-    const blogEntries = newsRows(props.pageContext.blogEntries, props.pageContext.locale.code);
-    
     const { currentPage, numPages, url } = props.pageContext;
+    const blogEntries = newsRows(props.pageContext.blogEntries, props.pageContext.locale.code, url);
+    
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages
     const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
