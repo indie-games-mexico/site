@@ -64,8 +64,7 @@ module.exports = {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "n8us2tsl",
-        dataset: "production",
-        watchMode: true
+        dataset: "production"
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
