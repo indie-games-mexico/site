@@ -24,6 +24,9 @@ module.exports = {
   'subscribe.on': 'Subscribe',
   'find.us': 'Find us',
   'footer.trademark': 'Indie Games México. Trademarks belong to Game Dev MX S de R.L. de C.V. All rights reserved.',
-  'by': 'by',
-  'published': 'Published at'
+  'by': 'By',
+  'published': 'Published at',
+  'readmore': 'Read More',
+  'next': 'Next',
+  'prev': 'Previous'
 };

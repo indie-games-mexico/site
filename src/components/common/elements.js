@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "gatsby"
 
 export const H1 = styled.h1`
   font-family: 'ZCOOL QingKe HuangYou', cursive;
@@ -18,6 +19,15 @@ export const H4 = styled.h4`
 `;
 
 export const A = styled.a`
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  text-decoration: none;
+  color: black;
+  &:visited {
+    color: black;
+  }
+`;
+
+export const GLink = styled(Link)`
   font-family: 'ZCOOL QingKe HuangYou', cursive;
   text-decoration: none;
   color: black;

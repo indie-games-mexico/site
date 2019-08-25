@@ -4,10 +4,20 @@ to = "/en"
 status = 200
 force = true
 [[redirects]]
+from = "/en/news"
+to = "/en/news/1"
+status = 200
+force = true
+[[redirects]]
 from = "/en/*"
 to = "/en/404.html"
 status = 404
 force = false
+[[redirects]]
+from = "/es/noticias"
+to = "/es/noticias/1"
+status = 200
+force = true
 [[redirects]]
 from = "/es/*"
 to = "/es/404.html"

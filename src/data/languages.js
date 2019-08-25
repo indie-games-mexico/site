@@ -4,7 +4,7 @@ module.exports = {
       locale: 'en',
       name: 'English',
       dynamicUrl: { // used for blog/news entries
-        label: 'News',
+        title: 'News',
         url: 'news'
       }
     },
@@ -12,7 +12,7 @@ module.exports = {
       locale: 'es',
       name: 'Español',
       dynamicUrl: { // used for blog/news entries
-        label: 'Noticias',
+        title: 'Noticias',
         url: 'noticias'
       }
     }

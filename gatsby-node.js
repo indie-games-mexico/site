@@ -150,10 +150,14 @@ const createBlogList = async(graphql, actions) => {
                 path: `${path}${pageNum+1}`,
                 component: require.resolve('./src/templates/blog-list.js'),
                 context: { 
-                    blogEntries,
+                    blogEntries: blogEntries.data.allSanityPost.nodes,
                     locale: {
-                        code: urlProps.locale
-                    }
+                        code: urlProps.locale,
+                        title: urlProps.dynamicUrl.title
+                    },
+                    currentPage: pageNum+1,
+                    numPages: totalPages,
+                    url: `${path}`
                 }
             });
         }

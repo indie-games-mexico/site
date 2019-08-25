@@ -24,6 +24,9 @@ module.exports = {
   'subscribe.on': 'Subscribete en ',
   'find.us': 'Encuentranos en',
   'footer.trademark': 'Indie Games México. Marcas registradas pertenecen a Game Dev MX S de R.L. de C.V. Todos los derechos reservados.',
-  'by': 'por',
-  'published': 'Publicado en'
+  'by': 'Por',
+  'published': 'Publicado en',
+  'readmore': 'Leer mas',
+  'next': 'Siguiente',
+  'prev': 'Previo'
 };

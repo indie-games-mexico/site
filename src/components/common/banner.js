@@ -69,6 +69,13 @@ export const Banner = ({ src, title }) => (
                       }
                     }
                   }
+                  news: file(relativePath: { eq: "banners/news-section.png" }) {
+                    childImageSharp {
+                      fluid(maxWidth: 1024, quality: 100) {
+                        ...GatsbyImageSharpFluid  
+                      }
+                    }
+                  }
                   factsheet: file(relativePath: { eq: "banners/factsheet.jpg" }) {
                     childImageSharp {
                       fluid(maxWidth: 2014, quality: 100) {
