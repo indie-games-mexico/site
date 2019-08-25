@@ -28,8 +28,8 @@ const PostPage = (props) => {
               title={ `Indie Games Mexico - ${props.pageContext.title}` }
               meta={[
                 { name: 'description', content: props.pageContext.title },
-                { name: 'robots', content: 'index,follow' }
-                // need to add keywords and summary
+                { name: 'robots', content: 'index,follow' },
+                { name: 'keywords', content: props.pageContext.keywords }
               ]}
         />
         <BannerRender fluid={((props.pageContext.mainImage || {}).asset || {}).fluid}></BannerRender>

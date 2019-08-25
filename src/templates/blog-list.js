@@ -18,7 +18,7 @@ const newsRows = (blogEntries, localeCode) =>
                     <Strong>{ locale[localeCode].messages.by }</Strong> { post.author.name }, { formatedDate(post.publishedAt, post.locale.code) }
                 </JustifiedP>
                 <JustifiedP>
-                    
+                    { post.summary }
                 </JustifiedP>
                 <div style={{ textAlign: 'right' }}>
                     <A href={post.slug}>{ locale[localeCode].messages.readmore }</A>

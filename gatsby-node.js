@@ -30,6 +30,8 @@ const createPostPages = async (graphql, actions) => {
                     author {
                         name
                     }
+                    summary
+                    keywords
                     _rawBody
                     
                 }
@@ -86,6 +88,8 @@ const queryPostsListPerPage = async (graphql, skip, limit, locale) => {
             author {
               name
             }
+            summary
+            keywords
           }
         }
       }
