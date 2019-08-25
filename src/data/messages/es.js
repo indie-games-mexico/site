@@ -13,6 +13,7 @@ module.exports = {
   'menu.community': 'Comunidad',
   'menu.community.link': '/es/comunidad',
   'menu.news': 'Noticias',
+  'menu.news.link': '/es/noticias',
   'language': 'Seleccione Lenguage',
   'localeName': 'Español MX',
   'locale': 'es',
