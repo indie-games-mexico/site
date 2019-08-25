@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
 import { JustifiedP, H1, MainPanel, Strong } from '../components/common/elements';
@@ -23,6 +24,14 @@ const PostPage = (props) => {
     const Layout = locale[props.pageContext.locale.code].layout
     return (
     <Layout location={props.location}>
+        <Helmet
+              title={ `Indie Games Mexico - ${props.pageContext.title}` }
+              meta={[
+                { name: 'description', content: props.pageContext.title },
+                { name: 'robots', content: 'index,follow' }
+                // need to add keywords and summary
+              ]}
+        />
         <BannerRender fluid={((props.pageContext.mainImage || {}).asset || {}).fluid}></BannerRender>
         <Container>
            <MainPanel>

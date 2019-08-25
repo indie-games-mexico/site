@@ -1,5 +1,5 @@
 import React from 'react';
-// import Helmet from 'react-helmet'
+import Helmet from 'react-helmet'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
 import { MainPanel, H2, A, JustifiedP, Strong, GLink } from '../components/common/elements';
@@ -42,6 +42,13 @@ const PostList = (props) => {
     const Layout = locale[localeCode].layout
     return (
         <Layout location={props.location}>
+            <Helmet
+              title={ `Indie Games Mexico - ${props.pageContext.locale.title}` }
+              meta={[
+                { name: 'description', content: props.pageContext.locale.title },
+                { name: 'robots', content: 'noindex,follow' }
+              ]}
+            />
             <Banner src="news" title={props.pageContext.locale.title}></Banner>
             <Container>
                 <MainPanel>
