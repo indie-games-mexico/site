@@ -177,9 +177,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
 /*
-    TODO: 
-        - Make the graphql private and only connect using tokens and re generate id's 
-          https://n8us2tsl.api.sanity.io/v1/graphql/production/default
+    GraphQL Server for Sanity
+          https://<project-id>.api.sanity.io/v1/graphql/production/default
         
 */
 

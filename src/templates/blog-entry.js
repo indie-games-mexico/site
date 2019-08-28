@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from "gatsby"
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Container } from '../components/common/container';
 import { JustifiedP, H1, MainPanel, Strong } from '../components/common/elements';
@@ -23,16 +24,29 @@ const BannerRender = ({fluid}) => {
 const PostPage = (props) => {
     const Layout = locale[props.pageContext.locale.code].layout
     return (
-    <Layout location={props.location}>
-        <Helmet
-              title={ `Indie Games Mexico - ${props.pageContext.title}` }
-              meta={[
-                { name: 'description', content: props.pageContext.title },
-                { name: 'robots', content: 'index,follow' },
-                { name: 'keywords', content: props.pageContext.keywords }
-              ]}
-        />
-        <BannerRender fluid={((props.pageContext.mainImage || {}).asset || {}).fluid}></BannerRender>
+        <StaticQuery
+        query={graphql`
+          query {
+            site {
+              siteMetadata {
+                projectId
+                dataset
+              }
+            }
+          }
+        `}
+        render={data => {
+            return (
+            <Layout location={props.location}>
+                <Helmet
+                    title={ `Indie Games Mexico - ${props.pageContext.title}` }
+                    meta={[
+                        { name: 'description', content: props.pageContext.title },
+                        { name: 'robots', content: 'index,follow' },
+                        { name: 'keywords', content: props.pageContext.keywords }
+                    ]}
+                />
+            <BannerRender fluid={((props.pageContext.mainImage || {}).asset || {}).fluid}></BannerRender>
         <Container>
            <MainPanel>
                <Panel>
@@ -52,8 +66,8 @@ const PostPage = (props) => {
                             <Row>
                                 <Col lg={12} style={{ textAlign:'left', fontFamily: 'Rajdhani, sans-serif' }}>
                                     <PortableText
-                                        projectId="n8us2tsl"
-                                        dataset="production"
+                                        projectId={data.site.siteMetadata.projectId}
+                                        dataset={data.site.siteMetadata.dataset}
                                         blocks={ props.pageContext._rawBody }
                                         />
                                 </Col>
@@ -63,7 +77,10 @@ const PostPage = (props) => {
                 </Panel>
             </MainPanel>
         </Container>
-    </Layout>
+    </Layout>)
+
+        }}>
+      </StaticQuery>
 );
     }
 
