@@ -1,12 +1,20 @@
+require('dotenv').config({
+  path: `.env`
+})
+
 const languages = require('./src/data/languages');
 const socialMediaLinks = require('./src/data/social-media-links');
 const mainMenuLinks = require('./src/data/main-menu-links');
+
+
 
 module.exports = {
   siteMetadata: {
     title: `Indie Games Mexico`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: '@indiegamesmexico',
+    projectId: process.env.SANITY_PROJECT_ID,
+    dataset: process.env.SANITY_DATASET,
     languages,
     socialMediaLinks,
     mainMenuLinks
@@ -59,6 +67,13 @@ module.exports = {
           }
         ],
       },
+    },
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

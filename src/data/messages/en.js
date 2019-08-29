@@ -13,6 +13,7 @@ module.exports = {
   'menu.community.link': '/en/community',
   'menu.community': 'Community',
   'menu.news': 'News',
+  'menu.news.link': '/en/news',
   'language': 'Choose Language',
   'localeName': 'English US',
   'locale': 'en',
@@ -23,5 +24,10 @@ module.exports = {
   'follow.us': 'Follow us',
   'subscribe.on': 'Subscribe',
   'find.us': 'Find us',
-  'footer.trademark': 'Indie Games México. Trademarks belong to Game Dev MX S de R.L. de C.V. All rights reserved.'
+  'footer.trademark': 'Indie Games México. Trademarks belong to Game Dev MX S de R.L. de C.V. All rights reserved.',
+  'by': 'By',
+  'published': 'Published at',
+  'readmore': 'Read More',
+  'next': 'Next',
+  'prev': 'Previous'
 };
