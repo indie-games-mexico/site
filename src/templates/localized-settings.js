@@ -21,7 +21,7 @@ export const locale = {
     es: {
         messages: esMessages,
         locale: esLocale,
-        format: 'DD dddd de MMMM del YYYY',
+        format: `dddd DD [de] MMMM YYYY`,
         layout: LayoutEs
     }
 }
