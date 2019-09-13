@@ -37,7 +37,7 @@ const GamesPage = (props) => (
                                                 <A href="field-rivals" style={{ float: 'left' }}>Find out more</A>
                                             </li>
                                             <li>
-                                                <A href="field-rivals/fact-sheet" style={{ float: 'left' }}>Fact Sheet</A>
+                                                <A href="field-rivals/fact-sheet" style={{ float: 'left' }}>Presskit</A>
                                             </li>
                                         </ul>
                                     </Col>
