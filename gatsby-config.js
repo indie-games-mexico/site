@@ -56,15 +56,11 @@ module.exports = {
       options: {}
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `ZCOOL QingKe HuangYou`,
-          },
-          {
-            family: 'Rajdhani'
-          }
+          `ZCOOL QingKe HuangYou`,
+          'Rajdhani'
         ],
       },
     },
