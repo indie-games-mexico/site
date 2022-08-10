@@ -59,12 +59,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `ZCOOL QingKe HuangYou`,
-          },
-          {
-            family: 'Rajdhani'
-          }
+          `ZCOOL QingKe HuangYou`,
+          'Rajdhani'
         ],
       },
     },
