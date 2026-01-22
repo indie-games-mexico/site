@@ -95,7 +95,7 @@ const DarkA = styled.a`
   }
 `;
 
-const MobileMediaLink = ({ link, title }) => {
+/* const MobileMediaLink = ({ link, title }) => {
   // console.log({icon, link, description, langKey, title})
   return (
     <MobileLi>
@@ -132,4 +132,152 @@ export const MainMenu = ({ i18nMessages, mainMenuLinks }) => {
 MainMenu.propTypes = {
   i18nMessages: PropTypes.object,
   mainMenuLinks: PropTypes.array
-}
+}*/
+
+const MobileMediaLink = ({ link, title }) => {
+  return (
+    <MobileLi>
+      <DarkA href={link} target="_blank" rel="noopener noreferrer">
+        {title}
+      </DarkA>
+    </MobileLi>
+  );
+};
+
+export const MainMenu = ({ i18nMessages, mainMenuLinks }) => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  /* ======================
+     DESKTOP LINKS
+  ====================== */
+  const links = mainMenuLinks.map(option => {
+    // SIN hijos
+    if (!option.children) {
+      return (
+        <Li key={option.langKey}>
+          <A href={i18nMessages[option.link]}>
+            {i18nMessages[option.langKey]}
+          </A>
+        </Li>
+      );
+    }
+
+    // CON hijos (Games)
+    return (
+      <Li key={option.langKey} style={{ position: 'relative' }}>
+        <A href={i18nMessages[option.link]}>
+          {i18nMessages[option.langKey]}
+        </A>
+
+        <ul
+          style={{
+            position: 'absolute',
+            top: '75px',
+            left: 0,
+            background: '#000',
+            listStyle: 'none',
+            padding: 0,
+            margin: 0,
+            minWidth: '220px',
+            display: 'none'
+          }}
+          className="submenu"
+        >
+          {option.children.map(child => (
+            <li key={child.langKey} style={{ lineHeight: '50px', padding: '0 20px' }}>
+              <A
+                href={i18nMessages[child.link]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {i18nMessages[child.langKey]}
+              </A>
+            </li>
+          ))}
+        </ul>
+      </Li>
+    );
+  });
+
+  /* ======================
+     MOBILE LINKS
+  ====================== */
+  const mobileLinks = mainMenuLinks.map(option => {
+    // SIN hijos
+    if (!option.children) {
+      return (
+        <MobileMediaLink
+          key={option.langKey}
+          link={i18nMessages[option.link]}
+          title={i18nMessages[option.langKey]}
+        />
+      );
+    }
+
+    // CON hijos (Games)
+    return (
+      <MobileSubMenuWrapper key={option.langKey}>
+        <MobileLi>
+          <DarkA href={i18nMessages[option.link]}>
+            {i18nMessages[option.langKey]}
+          </DarkA>
+        </MobileLi>
+
+        <ul className={isMenuOpen ? 'show' : ''}>
+          {option.children.map(child => (
+            <MobileLi key={child.langKey}>
+              <DarkA
+                href={i18nMessages[child.link]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {i18nMessages[child.langKey]}
+              </DarkA>
+            </MobileLi>
+          ))}
+        </ul>
+      </MobileSubMenuWrapper>
+    );
+  });
+
+  return (
+    <>
+      {/* ===== DESKTOP ===== */}
+      <UlDesktop>
+        {links}
+      </UlDesktop>
+
+      {/* ===== MOBILE ===== */}
+      <ULMobile>
+        <li style={{ margin: 0 }}>
+          <MobileExpandButton
+            type="button"
+            onClick={() => setMenuOpen(!isMenuOpen)}
+          >
+            <i
+              className={
+                isMenuOpen
+                  ? 'far fa-caret-square-up'
+                  : 'far fa-caret-square-down'
+              }
+            />
+          </MobileExpandButton>
+        </li>
+
+        <MobileSubMenuWrapper>
+          <MobileSubMenuUl className={isMenuOpen ? 'show' : ''}>
+            {mobileLinks}
+          </MobileSubMenuUl>
+        </MobileSubMenuWrapper>
+      </ULMobile>
+    </>
+  );
+};
+
+MainMenu.propTypes = {
+  i18nMessages: PropTypes.object,
+  mainMenuLinks: PropTypes.array
+};
+
+
+

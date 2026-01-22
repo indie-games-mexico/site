@@ -29,5 +29,14 @@ module.exports = {
   'published': 'Published at',
   'readmore': 'Read More',
   'next': 'Next',
-  'prev': 'Previous'
+  'prev': 'Previous',
+    'menu.games.fieldrivals': 'Field Rivals',
+    'menu.games.fieldrivals.link': 'https://fieldrivals.indiegamesmexico.com',
+    'menu.games.skyout': 'Skyout',
+    'menu.games.skyout.link': 'https://skyout.indiegamesmexico.com',
+    'menu.games.seriousgames': 'Serious Games',
+    'menu.games.seriousgames.link': 'https://seriousgames.indiegamesmexico.com',  
+    'menu.games.sgp': 'SGP',
+    'menu.games.sgp.link': 'https://sgp.indiegamesmexico.com'
+  
 };
