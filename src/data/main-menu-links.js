@@ -10,19 +10,19 @@ module.exports = [
     altKey: '',
     children: [
       {
-        link: 'https://fieldrivals.indiegamesmexico.com',
+        link: 'menu.games.fieldrivals.link',
         langKey: 'menu.games.fieldrivals',
       },
       {
-        link: 'https://skyout.indiegamesmexico.com',
+        link: 'menu.games.skyout.link',
         langKey: 'menu.games.skyout',
       },
       {
-        link: 'https://seriousgames.indiegamesmexico.com',
+        link: 'menu.games.seriousgames.link',
         langKey: 'menu.games.seriousgames',
       },
       {
-        link: 'https://sgp.indiegamesmexico.com',
+        link: 'menu.games.sgp.link',
         langKey: 'menu.games.sgp',
       },
     ],
